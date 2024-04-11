@@ -156,3 +156,37 @@ En este caso el primer $while$ se ejecutaría $\sqrt{n}$ veces y el segundo tamb
 ### ¿Cual es el caso promedio?
 
 #### Caso 1: Numero encontrado con éxito
+Calcularemos la sumatoria de los tiempos de casos de exito.
+Los casos de exito son en los que si existe el numero en la lista, por ende hay $n$ posibilidades.
+
+$$
+\sum_{i = 1}^{\sqrt{n}}
+\sum_{j = 1}^{\sqrt{n}} (i + j) =
+\sum_{i = 1}^{\sqrt{n}} \left( \sqrt{n} \cdot i + \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2} \right) = \\
+\sqrt{n} \cdot \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2}
++ n\frac{\sqrt{n} + 1}{2} = \\
+n \cdot \frac{\sqrt{n} + 1}{2} + n \cdot \frac{\sqrt{n} + 1}{2} = \frac{n}{2} \cdot \left( 2\sqrt{n} + 2 \right) = n\sqrt{n} + n
+$$
+
+#### Caso 2: Numero encontrado sin éxito
+Calcularemos la sumatoria de los tiempos de casos sin éxito.
+Para este caso tenemos que tener en cuenta que siempre en un caso de fracaso vamos a entrar a un bloque o no entraremos a ningúno, lo recorreremos todo y no encontraremos el numero. Podemos observar que hay $\sqrt{n}$  + 1 posibilidades, por lo cual podemos expresar la siguiente sumatoria:
+
+$$
+\sqrt{n} + \sum_{i = 1}^{\sqrt{n}} (i +  \sqrt{n}) = 
+\sqrt{n} +\frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2} +  n = \\
+\sqrt{n} + \frac{n + \sqrt{n}}{2} + n 
+$$
+
+#### Conclusión
+Si juntamos ambas expresiónes para promediarlo obtenemos lo siguiente:
+
+$$
+T(n) = \frac{n\sqrt{n} + n + \sqrt{n} + \frac{n + \sqrt{n}}{2} + n}{n + \sqrt{n} + 1} = \\
+\frac{2n\sqrt{n} + 4n + 2\sqrt{n} + n + \sqrt{n}}{2n + 2\sqrt{n} + 2} = \\
+\frac{2n\sqrt{n} + 5n + 3\sqrt{n}}{2n + 2\sqrt{n} + 2} = \\
+\frac{\sqrt{n} \cdot (2n + 5\sqrt{n} + 3)}{2n + 2\sqrt{n} + 2} \leq 
+\frac{\sqrt{n} \cdot (2n + 5\sqrt{n} + 3)}{2n + 5\sqrt{n} + 3} = \sqrt{n} \in \theta(n)
+$$
+
+Podemos observar que al sacar el caso promedio total tomando en cuanta el caso de exito y de fracaso es un calculo muy complejo, pero en muchos ejericios solo te piden el caso promedio de solo exito o de solo fracaso, lo cual lo hace un poco mas simple. :smile:
