@@ -202,7 +202,7 @@ $$
 
 $$
 \frac{\sqrt{n} \cdot (2n + 5\sqrt{n} + 3)}{2n + 2\sqrt{n} + 2} \leq 
-\frac{\sqrt{n} \cdot (2n + 5\sqrt{n} + 3)}{2n + 5\sqrt{n} + 3} = \sqrt{n} \in \theta(n)
+\frac{\sqrt{n} \cdot (2n + 5\sqrt{n} + 3)}{2n + 5\sqrt{n} + 3} = \sqrt{n} \in \theta(\sqrt{n})
 $$
 
 Podemos observar que al sacar el caso promedio total tomando en cuanta el caso de exito y de fracaso es un calculo muy complejo, pero en muchos ejercicios solo te piden el caso promedio de solo exito o de solo fracaso, lo cual lo hace un poco mas simple. :smile:
