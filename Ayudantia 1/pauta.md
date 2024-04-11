@@ -1,6 +1,6 @@
 # Ayudantía 1
 ## Análisis Asintótico: Parte 1
-### Verdadero o Falso: $100n^2 + 200n + 15 \in O(n^2)$
+### Verdadero o Falso: $n^2 + 3n + 10 \in O(n^2)$
 
 $$
 \lim_{n \to \infty}\frac{n^2+3n+10}{n^2}= \lim_{n \to \infty} \left( 1 + \frac{3}{n} + \frac{10}{n^2} \right) = 1
