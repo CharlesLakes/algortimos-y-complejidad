@@ -164,9 +164,15 @@ Los casos de exito son en los que si existe el numero en la lista, por ende hay 
 $$
 \sum_{i = 1}^{\sqrt{n}}
 \sum_{j = 1}^{\sqrt{n}} (i + j) =
-\sum_{i = 1}^{\sqrt{n}} \left( \sqrt{n} \cdot i + \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2} \right) = \\
+\sum_{i = 1}^{\sqrt{n}} \left( \sqrt{n} \cdot i + \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2} \right) = 
+$$
+
+$$
 \sqrt{n} \cdot \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2}
-+ n\frac{\sqrt{n} + 1}{2} = \\
++ n\frac{\sqrt{n} + 1}{2} = 
+$$
+
+$$
 n \cdot \frac{\sqrt{n} + 1}{2} + n \cdot \frac{\sqrt{n} + 1}{2} = \frac{n}{2} \cdot \left( 2\sqrt{n} + 2 \right) = n\sqrt{n} + n
 $$
 
