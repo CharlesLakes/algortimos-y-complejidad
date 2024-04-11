@@ -86,6 +86,8 @@ Es falso debido que para pertenecer a $\theta((n + 1)!)$ el limite tiene que ser
 
 ### Verdadero o Falso: $n\sqrt{n} \in o(n^2)$
 
+
+
 ## Análisis Asintótico: Parte 2
 
 Suponiendo que $T_1 \in O(f)$ $∧$ $T2 \in O(f)$ determinar si cada una de las
@@ -160,9 +162,11 @@ Calcularemos la sumatoria de los tiempos de casos de exito.
 Los casos de exito son en los que si existe el numero en la lista, por ende hay $n$ posibilidades.
 
 $$
-\sum_{i = 1}^{\sqrt{n}} \sum_{j = 1}^{\sqrt{n}} (i + j) =
+\sum_{i = 1}^{\sqrt{n}}
+\sum_{j = 1}^{\sqrt{n}} (i + j) =
 \sum_{i = 1}^{\sqrt{n}} \left( \sqrt{n} \cdot i + \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2} \right) = \\
-\sqrt{n} \cdot \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2} + n\frac{\sqrt{n} + 1}{2} = \\
+\sqrt{n} \cdot \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2}
++ n\frac{\sqrt{n} + 1}{2} = \\
 n \cdot \frac{\sqrt{n} + 1}{2} + n \cdot \frac{\sqrt{n} + 1}{2} = \frac{n}{2} \cdot \left( 2\sqrt{n} + 2 \right) = n\sqrt{n} + n
 $$
 
@@ -180,9 +184,18 @@ $$
 Si juntamos ambas expresiónes para promediarlo obtenemos lo siguiente:
 
 $$
-T(n) = \frac{n\sqrt{n} + n + \sqrt{n} + \frac{n + \sqrt{n}}{2} + n}{n + \sqrt{n} + 1} = \\
-\frac{2n\sqrt{n} + 4n + 2\sqrt{n} + n + \sqrt{n}}{2n + 2\sqrt{n} + 2} = \\
-\frac{2n\sqrt{n} + 5n + 3\sqrt{n}}{2n + 2\sqrt{n} + 2} = \\
+T(n) = \frac{n\sqrt{n} + n + \sqrt{n} + \frac{n + \sqrt{n}}{2} + n}{n + \sqrt{n} + 1} =
+$$
+
+$$
+\frac{2n\sqrt{n} + 4n + 2\sqrt{n} + n + \sqrt{n}}{2n + 2\sqrt{n} + 2} = 
+$$
+
+$$
+\frac{2n\sqrt{n} + 5n + 3\sqrt{n}}{2n + 2\sqrt{n} + 2} = 
+$$
+
+$$
 \frac{\sqrt{n} \cdot (2n + 5\sqrt{n} + 3)}{2n + 2\sqrt{n} + 2} \leq 
 \frac{\sqrt{n} \cdot (2n + 5\sqrt{n} + 3)}{2n + 5\sqrt{n} + 3} = \sqrt{n} \in \theta(n)
 $$
