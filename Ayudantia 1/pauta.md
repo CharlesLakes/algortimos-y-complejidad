@@ -86,7 +86,14 @@ Es falso debido que para pertenecer a $\theta((n + 1)!)$ el limite tiene que ser
 
 ### Verdadero o Falso: $n\sqrt{n} \in o(n^2)$
 
+$$
+\lim_{n \to \infty} \frac{n\sqrt{n}}{n^2} = 
+\lim_{n \to \infty} \frac{\sqrt{n}}{n} = 
+\lim_{n \to \infty} \frac{n^{\frac{1}2{}}}{n} = 
+\lim_{n \to \infty} \frac{1}{n^{\frac{1}{2}}} = 0
+$$
 
+Es verdadero debido a que el limte es diferente de infinito.
 
 ## Análisis Asintótico: Parte 2
 
