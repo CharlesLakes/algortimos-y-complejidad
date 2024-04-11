@@ -42,7 +42,7 @@ $$
 \frac{T(n)}{n} = \frac{2k}{k} = 2 \in O(1)
 $$
 
-Con lo anterior, podemos demostrar que el costo amortizado por operación es $O(n)$.
+Con lo anterior, podemos demostrar que el costo amortizado por operación es $O(1)$.
 
 ### Las potencias
 
