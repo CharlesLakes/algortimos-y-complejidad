@@ -66,7 +66,7 @@ Ahora con esto podemos obtener la siguiente expresión para el promedio:
 
 $$
 \frac{T(n)}{n} = 
-\frac{ \sum_{i = 0}^{X} 2^i + n - X  }{ n } =
+\left( \sum_{i = 0}^{X} 2^i + n - X  \right)/n =
 \frac{
     \frac{2^{X + 1} - 1}{2 - 1} + n - X
 }{
