@@ -168,8 +168,7 @@ $$
 $$
 
 $$
-\sqrt{n} \cdot \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2}
-+ n\frac{\sqrt{n} + 1}{2} = 
+\sqrt{n} \cdot \frac{\sqrt{n} \cdot (\sqrt{n} + 1)}{2} + n\frac{\sqrt{n} + 1}{2} = 
 $$
 
 $$
