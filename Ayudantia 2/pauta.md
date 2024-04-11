@@ -45,4 +45,56 @@ $$
 Con lo anterior, podemos demostrar que el costo amortizado por operación es $O(1)$.
 
 ### Las potencias
+Podemos observar que por cada operación tenemos el siguiente comportamiento: 
 
+$$
+f(n) = \begin{cases} 
+n, & \text{si } \exists k \in \mathbb{Z}, \text{ tal que } n = 2^k \\
+1, & \text{en caso contrario.}
+\end{cases}
+$$
+
+Podríamos obtener una expresión que nos dé la cantidad de números que son potencias de 2 entre $ [1,n] $.
+
+Para sacar esto podemos tener en cuenta que para obtener el máximo exponente entero de forma que la potencia a ese exponente sea menor o igual a $ n $, usaremos la expresión $ \lfloor \log_{2}{n} \rfloor $, pero esto no nos da la cantidad de potencias totales, para obtener esto simplemente hay que sumar 1 para considerar el $ 2^0 $:
+
+$$
+X = \lfloor \log_{2}{n} \rfloor + 1
+$$
+
+Ahora con esto podemos obtener la siguiente expresión para el promedio:
+
+$$
+\frac{T(n)}{n} = 
+\frac{ \sum_{i = 0}^{X} 2^i + n - X  }{ n } =
+\frac{
+    \frac{2^{X + 1} - 1}{2 - 1} + n - X
+}{
+    n
+}
+$$
+
+$$
+\frac{
+    \frac{2^{\lfloor \log_{2}{n} \rfloor + 1 + 1} - 1}{1} + n - \lfloor \log_{2}{n} \rfloor - 1
+}{
+    n
+} \leq \frac{
+    4n + n -  \log_{2}{n}  - 1
+}{
+    n
+}
+$$
+
+$$
+\frac{
+    5n - \log_{2}{n} - 1
+}{
+    n
+} \leq 
+\frac{
+    5n
+}{
+    n
+} = 5 \in O(1)
+$$
