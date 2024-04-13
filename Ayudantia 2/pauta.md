@@ -56,7 +56,7 @@ $$
 
 Podríamos obtener una expresión que nos dé la cantidad de números que son potencias de 2 entre $ [1,n] $.
 
-Para sacar esto podemos tener en cuenta que para obtener el máximo exponente entero de forma que la potencia a ese exponente sea menor o igual a $ n $, usaremos la expresión $ \lfloor \log_{2}{n} \rfloor $, pero esto no nos da la cantidad de potencias totales, para obtener esto simplemente hay que sumar 1 para considerar el $ 2^0 $:
+Para sacar esto podemos tener en cuenta que para obtener el máximo exponente entero de forma que la potencia a ese exponente sea menor o igual a $n$, usaremos la expresión $\lfloor \log_{2}{n} \rfloor$, pero esto no nos da la cantidad de potencias totales, para obtener esto simplemente hay que sumar 1 para considerar el $2^0$:
 
 $$
 X = \lfloor \log_{2}{n} \rfloor + 1
