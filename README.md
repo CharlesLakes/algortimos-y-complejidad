@@ -9,3 +9,8 @@ Se encuentra la pauta en formato (.md), GitHub debería interpretarlo para que s
 ## Ayudantía 2 (Análisis amortizado)
 - [ayudantia.pdf](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%202/ayudantia.pdf)
 - [pauta.md](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%202/pauta.md)
+
+## Ayudantía 2 (Caso promedio, Análisis amortizado y Cota inferior)
+- [ayudantia.pdf](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%203/ayudantia.pdf)
+- [pauta.md](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%203/pauta.md)
+
