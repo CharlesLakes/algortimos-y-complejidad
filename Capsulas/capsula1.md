@@ -19,7 +19,7 @@ Nangel Coello - nangel.coello@usm.cl
 ## ¿Qué es?
 <p align="justify">
 
-La fuerza bruta es un método simple para resolver problemas, donde se exploran todas las soluciones hasta hallar una que cumpla una condición particular. Aunque es útil en problemas pequeños, puede ser ineficaz en casos más complejos debido a su falta de optimización.
+La fuerza bruta es un enfoque simple para resolver un problema, a menudo basado directamente en el enunciado del problema y la definición de los conceptos involucrados. Suele ser la manera más simple de resolver un problema, pero no necesariamente la más eficiente. No conlleva ningún tipo de inteligencia, solo resuelve los problemas. Es útil para problemas con instancias pequeñas.
 
 </p>
 
