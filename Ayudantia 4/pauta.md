@@ -1,4 +1,4 @@
-# Ayudantía 3
+# Ayudantía 4
 ## Problema de Reducción Numérica
 
 ### Explicación
@@ -54,7 +54,7 @@ Soluciones:
 - [Top-Down (C++)](https://cses.fi/paste/5a6297baa8b0b8328cfd28/)
 - [Bottom-Up (Python)](https://cses.fi/paste/b4855b5cb3c6aadd76a04d/)
 
-## Problema de Reducción Numérica
+## Problema de Corte de Cuerda
 
 ### Explicación
 
