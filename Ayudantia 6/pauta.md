@@ -57,8 +57,7 @@ $$
 Podemos convetir lo anterior a una expresion de llenado.
 
 $$
-M[i][l] =
-\begin{cases}
+M[i][l] = \begin{cases}
     1, & i = n + 1 \\
     M[i + 1][A[i]], & A[i] \neq 0 \land l = 0 \\
     \sum_{j = 1}^{m}{M[i + 1][j]}, & A[i] = 0 \land l = 0 \\
@@ -71,8 +70,7 @@ $$
 Podemos convertir lo anterior en una expresión de llenado.
 
 $$
-M[i][l] =
-\begin{cases}
+M[i][l] = \begin{cases}
     1, & i = n + 1 \\
     M[i + 1][A[i]], & A[i] \neq 0 \land l = 0 \\
     \sum_{j = 1}^{m}{M[i + 1][j]}, & A[i] = 0 \land l = 0 \\
