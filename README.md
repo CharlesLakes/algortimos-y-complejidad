@@ -18,7 +18,12 @@ Se encuentra la pauta en formato (.md), GitHub debería interpretarlo para que s
 - [ayudantia.pdf](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%204/ayudantia.pdf)
 - [pauta.md](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%204/pauta.md)
 
-## Ayudantía 4 (Programación Dinamica)
+## Ayudantía 5 (Programación Dinamica)
 - [ayudantia.pdf](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%205/ayudantia.pdf)
 - [pauta.md](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%205/pauta.md)
+
+## Ayudantía 6 (Programación Dinamica + Matrices)
+- [ayudantia.pdf](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%206/ayudantia.pdf)
+- [pauta.md](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%206/pauta.md)
+
 
