@@ -15,10 +15,9 @@ $$
 f(n) = 
 \begin{cases} 
     0, & n = 0 \\
-    \min_{\substack{1 \leq i \\0 < \left \lfloor \frac{n}{10^{i - 1}} \right \rfloor\\ D(n,i) \neq 0 }} {\left (f(n - D(n,i)) + 1 \right )}, & n > 0
+    \min_{\substack{1 \leq i \text{ } \land \text{ } 0 < \left \lfloor \frac{n}{10^{i - 1}} \right \rfloor \text{ } \land \text{ } D(n,i) \neq 0 }} {\left (f(n - D(n,i)) + 1 \right )}, & n > 0
 \end{cases}
 $$
-
 
 ### Codigo
 
