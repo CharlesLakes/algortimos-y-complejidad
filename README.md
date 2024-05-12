@@ -14,7 +14,7 @@ Se encuentra la pauta en formato (.md), GitHub debería interpretarlo para que s
 - [ayudantia.pdf](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%203/ayudantia.pdf)
 - [pauta.md](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%203/pauta.md)
 
-## Ayudantía 4 (Fuerza bruta recursiva)
+## Ayudantía 4 (Fuerza bruta)
 - [ayudantia.pdf](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%204/ayudantia.pdf)
 - [pauta.md](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/main/Ayudantia%204/pauta.md)
 
