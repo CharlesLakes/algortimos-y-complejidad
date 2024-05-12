@@ -73,8 +73,6 @@ $$
 
 Al igual que en el ejercicio anterior, podemos aplicar programación dinámica a este problema. Te dejo como reto la tarea de implementar el código correspondiente.
 
-Aquí está el texto corregido y en formato Markdown compatible con Obsidian:
-
 ## Mirnyy
 
 Podemos analizar el algoritmo para unir dos arreglos ordenados y generar otro ordenado. Una forma de hacerlo sería concatenar ambos arreglos y luego ordenarlos utilizando algún algoritmo conocido, pero estos algoritmos son O(nlog(n)), lo cual no cumple con la complejidad requerida. Una forma más eficiente de unirlos es utilizando dos indicadores: uno que empiece al inicio de A y otro al inicio de B. Si el elemento que se está indicando en A es menor o igual que el que se indica en B, podemos agregar ese elemento a otro arreglo; en caso contrario, se agrega el de B.
@@ -147,4 +145,4 @@ def mediana(A, B):
 
 # FIN
 
-Avísame por correo si encuentras algún error o algo por el estilo.
+Avisar por correo si encuentras algún error o algo por el estilo.
