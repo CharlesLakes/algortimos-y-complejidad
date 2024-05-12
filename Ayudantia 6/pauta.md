@@ -54,27 +54,16 @@ f(i,l) =
 \end{cases}
 $$
 
-Podemos convetir lo anterior a una expresion de llenado.
-
-$$
-M[i][l] = \begin{cases}
-    1, & i = n + 1 \\
-    M[i + 1][A[i]], & A[i] \neq 0 \land l = 0 \\
-    \sum_{j = 1}^{m}{M[i + 1][j]}, & A[i] = 0 \land l = 0 \\
-    0, & A[i] \neq 0 \land l \neq 0 \land |l - A[i]| > 1 \\
-    M[i + 1][A[i]], & A[i] \neq 0 \land l \neq 0 \land |l - A[i]| \leq 1 \\
-    \sum_{j = \max(1,l - 1)}^{\min(m,l + 1)}{M[i + 1][j]}, & A[i] = 0 \land l \neq 0 \\
-\end{cases}
-$$
-
 Podemos convertir lo anterior en una expresión de llenado.
 
 Caso Base:
+
 $$
 M[i][l] = 1, i = n + 1
 $$
 
 Casos generales:
+
 $$
 M[i][l] = \begin{cases}
     M[i + 1][A[i]], & A[i] \neq 0 \land l = 0 \\
