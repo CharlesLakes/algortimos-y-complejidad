@@ -74,6 +74,7 @@ M[i][l] = \begin{cases}
 \end{cases}
 $$
 
+
 Podemos observar que para cada $M[i][l]$ vamos a utilizar los elementos de la fila $i + 1$. Entonces, siempre necesitamos tenerlo calculado antes. El llenado debe ser desde los valores de $i$ mayores hasta los menores, y en el eje de $l$ da igual.
 
 Podemos observar que la complejidad espacial es $O(NM)$ y la complejidad temporal también es $O(NM)$.
