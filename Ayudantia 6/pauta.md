@@ -112,3 +112,6 @@ Solución: https://cses.fi/paste/01e5d8fbead934d34fb977/
 Este problema se encuentra en la capsula subida por Nangel.
 
 # FIN
+
+Avisar por correo si encuentras algún error o algo por el estilo.
+

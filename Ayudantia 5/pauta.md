@@ -89,3 +89,7 @@ M[i] =
 $$
 
 Observamos que para calcular los valores de $M$ para los casos no base, siempre necesitamos acceder al valor de los elementos que están adelante hacia $n$. Por lo tanto, para calcular todos los valores de $M$, debemos empezar llenando de derecha a izquierda (es decir, desde $i$ mayores hasta los menores). Además, notamos que para el cálculo de los valores de $M[i]$, en el peor caso necesitamos recorrer todos los elementos hacia adelante. Por ende, la complejidad temporal es $O(n^2)$. La complejidad espacial sería $O(n)$ debido a que hay $n$ posiciones posibles en M.
+
+# FIN
+
+Avisar por correo si encuentras algún error o algo por el estilo.
