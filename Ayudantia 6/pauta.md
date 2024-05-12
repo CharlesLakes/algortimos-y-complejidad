@@ -69,9 +69,14 @@ $$
 
 Podemos convertir lo anterior en una expresión de llenado.
 
+Caso Base:
+$$
+M[i][l] = 1, i = n + 1
+$$
+
+Casos generales:
 $$
 M[i][l] = \begin{cases}
-    1, & i = n + 1 \\
     M[i + 1][A[i]], & A[i] \neq 0 \land l = 0 \\
     \sum_{j = 1}^{m}{M[i + 1][j]}, & A[i] = 0 \land l = 0 \\
     0, & A[i] \neq 0 \land l \neq 0 \land |l - A[i]| > 1 \\
