@@ -70,7 +70,7 @@ M[i][l] = \begin{cases}
     \sum_{j = 1}^{m}{M[i + 1][j]}, & A[i] = 0 \land l = 0 \\
     0, & A[i] \neq 0 \land l \neq 0 \land |l - A[i]| > 1 \\
     M[i + 1][A[i]], & A[i] \neq 0 \land l \neq 0 \land |l - A[i]| \leq 1 \\
-    \sum_{j = \max(1,l - 1)}^{\min(m,l + 1)}{M[i + 1][j]}, & A[i] = 0 \land l \neq 0 \\
+    \sum_{j = \max(1,l - 1)}^{\min(m,l + 1)}{M[i + 1][j]}, & A[i] = 0 \land l \neq 0 
 \end{cases}
 $$
 
