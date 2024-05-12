@@ -42,16 +42,30 @@ Observamos que dado que solo podemos colocar números del 1 al $m$ en los espaci
 
 Si tomamos una decisión sobre qué elemento colocar en la posición $i$, podemos observar que calcular la función empezando en $i$ sería equivalente a tomar una decisión sobre qué elemento colocar y luego llamar a $f(i + 1, \text{elemento que elegí})$. Podemos simplificar todos los casos posibles de la siguiente manera:
 
+Caso Base:
+
 $$
-f(i,l) =
-\begin{cases}
-    1, & i = n + 1 \\
-    f(i + 1,A[i]), & A[i] \neq 0 \land l = 0 \\
-    \sum_{j = 1}^{m}{f(i + 1,j)}, & A[i] = 0 \land l = 0 \\
-    0, & A[i] \neq 0 \land l \neq 0 \land |l - A[i]| > 1 \\
-    f(i + 1,A[i]), & A[i] \neq 0 \land l \neq 0 \land |l - A[i]| \leq 1 \\
-    \sum_{j = \max(1,l - 1)}^{\min(m,l + 1)}{f(i + 1,j)}, & A[i] = 0 \land l \neq 0 \\
-\end{cases}
+f(i,l) = 1 \text{, } i = n + 1
+$$
+
+$$
+f(i,l) = f(i + 1,A[i]) \text{, } A[i] \neq 0 \land l = 0
+$$
+
+$$
+f(i,l) = \sum_{j = 1}^{m}{f(i + 1,j)} \text{, } A[i] = 0 \land l = 0
+$$
+
+$$
+f(i,l) = 0 \text{, } A[i] \neq 0 \land l \neq 0 \land |l - A[i]| > 1
+$$
+
+$$
+f(i,l) = f(i + 1,A[i]) \text{, } A[i] \neq 0 \land l \neq 0 \land |l - A[i]| \leq 1
+$$
+
+$$
+f(i,l) = \sum_{j = \max(1,l - 1)}^{\min(m,l + 1)}{f(i + 1,j)} \text{, } A[i] = 0 \land l \neq 0
 $$
 
 Podemos convertir lo anterior en una expresión de llenado.
@@ -59,21 +73,30 @@ Podemos convertir lo anterior en una expresión de llenado.
 Caso Base:
 
 $$
-M[i][l] = 1, i = n + 1
+M[i][l] = 1 \text{, } i = n + 1
 $$
 
 Casos generales:
 
 $$
-M[i][l] = \begin{cases}
-    M[i + 1][A[i]], & A[i] \neq 0 \land l = 0 \\
-    \sum_{j = 1}^{m}{M[i + 1][j]}, & A[i] = 0 \land l = 0 \\
-    0, & A[i] \neq 0 \land l \neq 0 \land |l - A[i]| > 1 \\
-    M[i + 1][A[i]], & A[i] \neq 0 \land l \neq 0 \land |l - A[i]| \leq 1 \\
-    \sum_{j = \max(1,l - 1)}^{\min(m,l + 1)}{M[i + 1][j]}, & A[i] = 0 \land l \neq 0 
-\end{cases}
+M[i][l] = M[i + 1][A[i]] \text{, } A[i] \neq 0 \land l = 0 
 $$
 
+$$
+M[i][l] = \sum_{j = 1}^{m}{M[i + 1][j]} \text{, } A[i] = 0 \land l = 0
+$$
+
+$$
+M[i][l] = 0 \text{, } A[i] \neq 0 \land l \neq 0 \land |l - A[i]| > 1 
+$$
+
+$$
+M[i][l] =  M[i + 1][A[i]] \text{, } A[i] \neq 0 \land l \neq 0 \land |l - A[i]| \leq 1
+$$
+
+$$
+M[i][l] = \sum_{j = \max(1,l - 1)}^{\min(m,l + 1)}{M[i + 1][j]} \text{, } A[i] = 0 \land l \neq 0
+$$
 
 Podemos observar que para cada $M[i][l]$ vamos a utilizar los elementos de la fila $i + 1$. Entonces, siempre necesitamos tenerlo calculado antes. El llenado debe ser desde los valores de $i$ mayores hasta los menores, y en el eje de $l$ da igual.
 
