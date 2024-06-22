@@ -110,4 +110,4 @@ $$
 
 Notar que si el elemento que buscamos es $x$, si $x \leq A[n-1]$ (el ultimo elemeto), este se encuentra en el subarreglo de la derecha, en caso contrario, se ecuentra en el sub arreglo de la izquierda. Teniendo esto identificado, se puede realizar una busqueda binaria comun en el subarreglo correspondiente.
 
-Esto tiene tiempo $ EncontrarMaximo + BusquedaBinaria = O(log(n)) + O(log(n))  = O(log(n))$
+Esto tiene tiempo $EncontrarMaximo + BusquedaBinaria = O(log(n)) + O(log(n))  = O(log(n))$
