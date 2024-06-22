@@ -88,7 +88,7 @@ $$
 Asi, tenemos un algoritmo que calcula el n-esimo numero de Fibonacci en tiempo $O(log(n))$ 
 
 ## GCD y LCM
-
+_En proceso_
 ## Arreglo shifteado
 ### A)
 Como se conoce $k$ y el arreglo se encotraba ordenado antes del shifteo, ecotrar el valor maximo en el arreglo en tiempo $\Theta(1)$ se reduce a buscar en la posicion $k-1$ del arreglo (se indica que se parte del 0), pues en la posicion $k$ se encuentra el minimo.
