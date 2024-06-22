@@ -1,4 +1,4 @@
-# Ayudantía 8
+# Ayudantia 8
 
 ## Dividir y Conquistar
 
