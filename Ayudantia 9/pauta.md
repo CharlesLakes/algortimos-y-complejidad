@@ -60,7 +60,7 @@ $$
 
 Notar ahora que ambas mitades son iguales, por lo que solo necesito multiplicar una mitad y multiplicar el resultado por si mismo, terminando con un total de 2 multiplicaciones.
 
-Generalizando, cuando $n = 2^k, k \in \N$ (n es potencia de 2), podemos defiir recursivamete la matriz para n:
+Generalizando, cuando $n = 2^k, k \in \mathbb{N}$ (n es potencia de 2), podemos defiir recursivamete la matriz para n:
 
 $$
 M(n) = 
