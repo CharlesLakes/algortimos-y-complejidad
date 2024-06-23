@@ -4,7 +4,7 @@
 
 ### Desequilibrio
 
-_Me demorare un poco en subir este ejericio debido que es muy largo de explicar_
+![Explicación aquí](Desbalance.pdf)
 
 ## Decrecer y Conquistar
 
