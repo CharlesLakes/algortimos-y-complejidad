@@ -6,6 +6,8 @@
 
 ![Explicación aquí](Desbalance.pdf)
 
+PD: Dice desbalance pero es desequilibrio. Me equivoque al colocar el titulo.
+
 ## Decrecer y Conquistar
 
 ### Mínimo $N$ en una Función No Decreciente
