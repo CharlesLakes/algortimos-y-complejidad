@@ -12,6 +12,14 @@ header: Ayudantía 1
 
 ---
 
+<div align="center" style="font-size:60px;">
+
+## Motivación
+
+</div>
+
+---
+
 # ¿Que es programación competitiva?
 
 <div style="display:flex;align-items:center;gap:20px;">
@@ -109,6 +117,14 @@ La página más activa y con una amplia cantidad de problemas, recursos y tutori
 
 ---
 
+
+<div align="center" style="font-size:60px;">
+
+## C++ y STL
+
+</div>
+
+---
 # Estructura básica de un programa
 
 ```cpp
@@ -419,3 +435,63 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+<div align="center" style="font-size:60px;">
+
+## ¿Cómo abordar un problema de programación competitiva?
+
+</div>
+
+---
+
+# Partes del Problema
+
+## Enunciado
+
+Proporciona una descripción detallada del problema a resolver.
+
+![center](imagen7.png)
+
+---
+
+# Partes del Problema
+
+## Entrada
+
+Define el formato y las restricciones de la entrada. Puedes asumir que las restricciones siempre se cumplirán. La entrada debe ser leída desde la entrada estándar (por consola, usando `cin` o `input()`).
+
+![center](imagen8.png)
+
+---
+
+# Partes del Problema
+
+## Salida
+
+Especifica el formato de la salida que debe devolver el programa. La salida debe ser mostrada en la salida estándar (por consola, usando `cout` o `print()`).
+
+![center](imagen9.png)
+
+---
+
+# Partes del Problema
+
+## Ejemplos
+
+Se proporcionan casos de prueba públicos para verificar tu código. Sin embargo, al enviar tu solución, el juez evaluará tu código también con casos de prueba ocultos.
+
+![center](imagen10.png)
+
+---
+
+# Partes del Problema
+
+## Tiempo Límite y Límite de Memoria
+
+Cada problema tiene un tiempo límite y un límite de memoria. Si la solución excede estas restricciones, se rechazará con un error de TLE (Time Limit Exceeded) o MLE (Memory Limit Exceeded). Aproximadamente, $10^8$ operaciones toman un segundo.
+
+![center](imagen11.png)
+
+
