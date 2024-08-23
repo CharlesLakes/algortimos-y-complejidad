@@ -7,8 +7,17 @@ footer: Algoritmos y Complejidad
 header: Ayudantía 1
 ---
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: "Montserrat", sans-serif !important;
+}
+</style>
+
 <!-- _class: title -->
 # Ayudantía 1
+
+Carlos Lagos - carlos.lagosc@usm.cl
 
 ---
 
@@ -276,6 +285,27 @@ conjunto.erase(20); // Elimina el elemento 20 del set
 
 ---
 
+# Estructuras de Datos - Set
+
+```c++
+// Uso de lower_bound
+auto it_lower = conjunto.lower_bound(12); // Encuentra el primer elemento no menor que 12
+if (it_lower != conjunto.end()) {
+    cout << "El primer elemento no menor que 12 es: " << *it_lower << endl;
+} else {
+    cout << "No hay elementos no menores que 12 en el set" << endl;
+}
+// Uso de upper_bound
+auto it_upper = conjunto.upper_bound(12); // Encuentra el primer elemento mayor que 12
+if (it_upper != conjunto.end()) {
+    cout << "El primer elemento mayor que 12 es: " << *it_upper << endl;
+} else {
+    cout << "No hay elementos mayores que 12 en el set" << endl;
+}
+```
+
+---
+
 # Estructuras de Datos - Map
 
 Un `map` es un contenedor que almacena pares clave-valor ordenados por las claves. 
@@ -428,6 +458,64 @@ int main() {
 
 ---
 
+# Algoritmos - Reverse
+
+La función `reverse` invierte el orden de los elementos en un contenedor.
+
+```cpp
+vector<int> numeros = {1, 2, 3, 4, 5};
+
+// Invertir el vector
+reverse(numeros.begin(), numeros.end());
+
+// Imprimir el vector invertido
+cout << "Vector invertido: ";
+for (int num : numeros) {
+    cout << num << " ";
+}
+cout << endl;
+```
+---
+
+# Algoritmos - Lower Bound y Upper Bound
+
+Las funciones `lower_bound` y `upper_bound` se utilizan para buscar elementos en contenedores ordenados. `lower_bound` devuelve un iterador al primer elemento que no es menor que el valor especificado, mientras que `upper_bound` devuelve un iterador al primer elemento mayor que el valor especificado.
+
+---
+
+# Algoritmos - Lower Bound y Upper Bound
+
+```cpp
+vector<int> numeros = {1, 2, 4, 4, 5, 6, 7};
+
+auto it_lower = lower_bound(numeros.begin(), numeros.end(), 4);
+auto it_upper = upper_bound(numeros.begin(), numeros.end(), 4);
+
+cout << "Lower bound de 4: " << distance(numeros.begin(), it_lower) << endl; // Índice del primer 4
+cout << "Upper bound de 4: " << distance(numeros.begin(), it_upper) << endl; // Índice del primer elemento mayor que 4
+```
+
+---
+
+# Algoritmos - Next Permutation
+
+La función `next_permutation` transforma el contenedor en la siguiente permutación lexicográficamente mayor. Si el contenedor está en su última permutación posible, lo transforma a la primera permutación.
+
+```cpp
+vector<int> numeros = {1, 2, 3};
+
+do {
+    // Imprimir la permutación actual
+    for (int num : numeros) {
+        cout << num << " ";
+    }
+    cout << endl;
+} while (next_permutation(numeros.begin(), numeros.end()));
+```
+
+
+---
+
 <div align="center" style="font-size:60px;">
 
 ## ¿Cómo abordar un problema de programación competitiva?
@@ -436,7 +524,7 @@ int main() {
 
 ---
 
-# Partes del Problema
+# Partes de un Problema
 
 ## Enunciado
 
@@ -446,7 +534,7 @@ Proporciona una descripción detallada del problema a resolver.
 
 ---
 
-# Partes del Problema
+# Partes de un Problema
 
 ## Entrada
 
@@ -456,7 +544,7 @@ Define el formato y las restricciones de la entrada. Puedes asumir que las restr
 
 ---
 
-# Partes del Problema
+# Partes de un Problema
 
 ## Salida
 
@@ -466,7 +554,7 @@ Especifica el formato de la salida que debe devolver el programa. La salida debe
 
 ---
 
-# Partes del Problema
+# Partes de un Problema
 
 ## Ejemplos
 
@@ -476,7 +564,7 @@ Se proporcionan casos de prueba públicos para verificar tu código. Sin embargo
 
 ---
 
-# Partes del Problema
+# Partes de un Problema
 
 ## Tiempo Límite y Límite de Memoria
 
@@ -484,4 +572,27 @@ Cada problema tiene un tiempo límite y un límite de memoria. Si la solución e
 
 ![center](imagen11.png)
 
+---
 
+# Cómo abordar un ejercicio correctamente
+
+* Comienza leyendo la sección de entrada y salida del problema.
+* Luego, lee el enunciado completo (con el contexto de la entrada y salida, podrás identificar información irrelevante más rápidamente).
+* Haz observaciones y deduce propiedades clave del problema.
+* Diseña un algoritmo. Si realiza menos de $10^8$ operaciones, procede a programarlo; si no, regresa al paso 3.
+
+---
+
+# ¿Cuándo pedir ayuda?
+
+* Si has dedicado suficiente tiempo a pensar en la solución (más de 60 minutos).
+    * Si la respuesta es sí, quizás sea un buen momento para pedir ayuda.
+
+* Si no logras resolver el ejercicio completo, pero has encontrado propiedades y observaciones interesantes.
+    * Sigue intentándolo por unos 30 minutos más; si no progresas, considera pedir ayuda.
+
+---
+
+<div align="center">
+<h2 style="font-size:400px;">FIN</h2>
+</div>
