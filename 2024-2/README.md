@@ -14,9 +14,9 @@ Páginas para ejercitar:
 Recursos específicos:
 
 * **Dividir y Conquistar:** [División y Conquista en GeeksforGeeks](https://www.geeksforgeeks.org/divide-and-conquer-algorithm-introduction/)
-* **Backtracking:** [Backtracking en CP Algorithms](https://cp-algorithms.com/algorithm/backtracking.html)
-* **Fuerza Bruta:** [Fuerza Bruta en GeeksforGeeks](https://www.geeksforgeeks.org/brute-force-algorithm-in-computer-science/)
-* **Greedy:** [Greedy Algorithms en CP Algorithms](https://cp-algorithms.com/greedy/)
+* **Backtracking:** [Backtracking en GeeksforGeeks](https://www.geeksforgeeks.org/backtracking-algorithms/)
+* **Fuerza Bruta:** [Fuerza Bruta en GeeksforGeeks](https://www.geeksforgeeks.org/brute-force-approach-and-its-pros-and-cons/)
+* **Greedy:** [Greedy Algorithms en GeeksforGeeks](https://www.geeksforgeeks.org/greedy-algorithms/)
 * **Programación Dinámica:** [Programación Dinámica en GeeksforGeeks](https://www.geeksforgeeks.org/dynamic-programming/)
 
 Ejercicios relacionados a la ayudantía:
