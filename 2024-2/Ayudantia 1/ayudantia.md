@@ -133,6 +133,8 @@ La página más activa y con una amplia cantidad de problemas, recursos y tutori
 
 </div>
 
+Problemas para practicar: https://vjudge.net/contest/650297
+
 ---
 # Estructura básica de un programa
 
