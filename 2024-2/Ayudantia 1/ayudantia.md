@@ -165,9 +165,7 @@ vector<int> arr1; // Arreglo vacío de ints
 vector<int> arr2(10); // Arreglo inicializado con 10 elementos
 vector<int> arr3(8, -1); // Arreglo inicializado con 8 elementos, asignando -1 a todas las posiciones
 vector<vector<string>> arr5; // Vector que almacena vectores de string
-```
 
-```c++
 arr1.push_back(10); // Inserta 10 al final en O(1)
 arr2.pop_back(); // Elimina el último elemento en O(1)
 arr2[3] = 15; // Asigna 15 en la posición 3
@@ -207,9 +205,7 @@ queue<tipo_de_dato> nombre_de_variable;
 
 ```c++
 queue<int> cola;
-```
 
-```c++
 cola.push(20); // Inserta el valor 20 al final de la cola
 cout << cola.front() << endl; // Imprime el valor en el frente de la cola
 cola.pop(); // Elimina el elemento al frente de la cola
@@ -235,9 +231,7 @@ stack<tipo_de_dato> nombre_de_variable;
 
 ```c++
 stack<int> pila;
-```
 
-```cpp
 pila.push(30); // Inserta el valor 30 en la pila
 cout << pila.top() << endl; // Imprime el valor en el tope de la pila
 pila.pop(); // Elimina el elemento en el tope de la pila
@@ -265,9 +259,7 @@ set<tipo_de_dato> nombre_de_variable;
 ```c++
 set<int> conjunto; // Orden de menor a mayor
 set<int,greater<int>> alreves; // Orden de menor a mayor
-```
 
-```c++
 conjunto.insert(15); // Inserta el valor 15 en el set
 conjunto.insert(20); // Inserta el valor 20 en el set
 conjunto.insert(10); // Inserta el valor 10 en el set
@@ -300,9 +292,7 @@ map<tipo_de_clave, tipo_de_valor> nombre_de_variable;
 
 ```c++
 map<string, int> mapa;
-```
 
-```c++
 mapa["manzanas"] = 10; // Asigna el valor 10 a la clave "manzanas"
 mapa["naranjas"] = 5; // Asigna el valor 5 a la clave "naranjas"
 
