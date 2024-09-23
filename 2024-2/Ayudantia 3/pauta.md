@@ -1,4 +1,71 @@
+---
+geometry: margin=30mm
+---
+
 # Pauta
+
+## Análisis Amortizado
+
+### Ejercicio 1
+
+Observemos que la cantidad de cuadrados perfectos desde $1$ hasta $n$ es $\lfloor \sqrt{n} \rfloor$, a lo que llamaremos $m$.
+
+El objetivo es calcular el costo amortizado por operación, que está dado por $C(n) = \frac{T(n)}{n}$, donde $T(n)$ es el tiempo total tras realizar $n$ operaciones y $n$ es el número total de operaciones.
+
+El tiempo total $T(n)$ está dado por:
+
+$$
+T(n) = n - m + \sum_{i=1}^{m} i^2
+$$
+
+Desarrollando esta expresión:
+
+$$
+T(n) = n - m + \frac{m(m + 1)(2m + 1)}{6}
+$$
+$$
+= n - m + \frac{2m^3 + 3m^2 + m}{6}
+$$
+$$
+= \frac{6n - 6m + 2m^3 + 3m^2 + m}{6}
+$$
+$$
+= \frac{6n + 2m^3 + 3m^2 - 5m}{6}
+$$
+
+Ahora calculamos $C(n)$:
+
+$$
+C(n) = \frac{T(n)}{n}
+$$
+$$
+= \frac{6n + 2m^3 + 3m^2 - 5m}{6n}
+$$
+$$
+= 1 + \frac{m^3}{3n} + \frac{m^2}{2n} - \frac{5m}{6n}
+$$
+
+Reemplazando $m$ por $\lfloor \sqrt{n} \rfloor$:
+
+$$
+C(n) = 1 + \frac{\lfloor \sqrt{n} \rfloor^3}{3n} + \frac{\lfloor \sqrt{n} \rfloor^2}{2n} - \frac{5\lfloor \sqrt{n} \rfloor}{6n}
+$$
+
+Dado que es complicado trabajar con $\lfloor \sqrt{n} \rfloor$, aproximamos $\lfloor \sqrt{n} \rfloor \approx \sqrt{n}$:
+
+$$
+C(n) = 1 + \frac{n^{3/2}}{3n} + \frac{n^{2/2}}{2n} - \frac{5n^{1/2}}{6n}
+$$
+$$
+= 1 + \frac{n^{1/2}}{3} + \frac{1}{2} - \frac{5}{6n^{1/2}}
+$$
+$$
+= 1 + \frac{1}{2} + n^{1/2} - \frac{5}{6n^{1/2}} \in \Theta(\sqrt{n})
+$$
+
+Por lo tanto, el costo amortizado por operación $C(n)$ es del orden $\Theta(\sqrt{n})$.
+
+
 ## Subarreglo con Suma Máxima
 
 ```cpp
@@ -115,9 +182,9 @@ Para el caso general, es decir, cuando  a no es necesariamente una potencia de 2
 $$
 M(n) = 
 \begin{cases} 
-    M, & n = 1 \\
-    (M(n/2))^{2}, & n > 1 & y & n & par \\
-    M\times(M(\lfloor n/2\rfloor))^{2}, & n > 1 & y & n & impar \\
+    M, & \text{n = 1} \\
+    (M(n/2))^{2}, &  \text{n > 1  y  n  par} \\
+    M\times(M(\lfloor n/2\rfloor))^{2}, & \text{n > 1  y n  impar} \\
 \end{cases}
 $$
 
@@ -125,4 +192,4 @@ Asi, tenemos un algoritmo que calcula el n-esimo numero de Fibonacci en tiempo $
 
 ## Desafío ultra difícil
 
-[Explicación aquí](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/739593dcbf4caab934ba3c16b6efd840836ccb41/2024-1/Ayudantia%208/Desbalance.pdf)
+[Click aqui](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/739593dcbf4caab934ba3c16b6efd840836ccb41/2024-1/Ayudantia%208/Desbalance.pdf)
