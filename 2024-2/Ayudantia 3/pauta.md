@@ -66,6 +66,30 @@ $$
 Por lo tanto, el costo amortizado por operación $C(n)$ es del orden $\Theta(\sqrt{n})$.
 
 
+### Ejercicio 2
+
+#### Minpila
+La estructura **minpila** es una pila que permite obtener el elemento mínimo en tiempo constante. Se implementa utilizando una pila que almacena pares de enteros. Cada par consiste en:
+
+1. **Elemento actual**: el valor del elemento que se inserta.
+2. **Mínimo actual**: el valor mínimo de todos los elementos en la pila hasta ese momento.
+
+##### Implementación
+- **Insertar (push)**: Cuando se inserta un nuevo elemento, se obtiene el mínimo actual de la pila. Luego, se compara el nuevo elemento con este mínimo. Se crea un par que contiene el nuevo elemento y el mínimo entre el nuevo elemento y el mínimo anterior, y este par se apila en la pila principal. Así, cada vez que se realiza una inserción, se mantiene un registro del mínimo hasta ese punto.
+
+- **Sacar (pop)**: Para desapilar, se retira el par en la cima de la pila. El primer valor del par es el elemento que se ha desapilado, mientras que el segundo valor sigue representando el mínimo hasta ese momento.
+
+- **Obtener el mínimo (getMin)**: Para acceder al mínimo, se puede obtener el segundo elemento del par en la cima de la pila, que siempre contendrá el mínimo actual.
+
+#### Mincola
+La **mincola** es una estructura que simula el comportamiento de una cola utilizando dos pilas de tipo **minpila**: `entrada` y `salida`. Cada una de estas pilas actúa como un tipo de dato abstracto que mantiene su propio registro del mínimo. 
+
+Al insertar un elemento, se apila en `entrada` usando la funcionalidad de **minpila**. Para obtener o sacar el elemento al frente, si `salida` está vacía, se mueven todos los elementos de `entrada` a `salida`, invirtiendo su orden. Si `salida` no está vacía, simplemente se desapila el elemento en la cima de `salida`. Para obtener el valor mínimo, se comparan los mínimos de `entrada` y `salida`, devolviendo el menor.
+
+#### Complejidad Amortizada
+El análisis de la complejidad amortizada indica que, aunque algunas operaciones como `dequeue` y `front` pueden ser O(n) en ciertos casos, el costo promedio de las operaciones a lo largo de múltiples interacciones es O(1). Esto se debe a que cada elemento se mueve a `salida` solo una vez, y las operaciones de inserción y obtención del mínimo se realizan en O(1). Por lo tanto, el costo amortizado por operación en la mincola es O(1).
+
+
 ## Subarreglo con Suma Máxima
 
 ```cpp
