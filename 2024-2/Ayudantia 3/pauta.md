@@ -37,6 +37,7 @@ El tiempo de ejecución es $O(n \log n)$.
 
 ## Fibonacci
 
+**Asumiremos que la multiplicación de dos números tiene un tiempo constante. Aunque esto no siempre es cierto en todas las circunstancias, para este problema consideramos que la operación de multiplicar dos números es $O(1)$.**
 
 Siendo $f_n$ el n-esimo numero de Fibonacci, tenemos:
 
