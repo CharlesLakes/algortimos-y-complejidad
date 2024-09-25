@@ -2,11 +2,9 @@
 geometry: margin=30mm
 ---
 
-# Pauta
+# Análisis Amortizado
 
-## Análisis Amortizado
-
-### Ejercicio 1
+## Ejercicio 1
 
 Observemos que la cantidad de cuadrados perfectos desde $1$ hasta $n$ es $\lfloor \sqrt{n} \rfloor$, a lo que llamaremos $m$.
 
@@ -66,29 +64,31 @@ $$
 Por lo tanto, el costo amortizado por operación $C(n)$ es del orden $\Theta(\sqrt{n})$.
 
 
-### Ejercicio 2
+## Ejercicio 2
 
-#### Minpila
+### Minpila
 La estructura **minpila** es una pila que permite obtener el elemento mínimo en tiempo constante. Se implementa utilizando una pila que almacena pares de enteros. Cada par consiste en:
 
 1. **Elemento actual**: el valor del elemento que se inserta.
 2. **Mínimo actual**: el valor mínimo de todos los elementos en la pila hasta ese momento.
 
-##### Implementación
+#### Implementación
 - **Insertar (push)**: Cuando se inserta un nuevo elemento, se obtiene el mínimo actual de la pila. Luego, se compara el nuevo elemento con este mínimo. Se crea un par que contiene el nuevo elemento y el mínimo entre el nuevo elemento y el mínimo anterior, y este par se apila en la pila principal. Así, cada vez que se realiza una inserción, se mantiene un registro del mínimo hasta ese punto.
 
 - **Sacar (pop)**: Para desapilar, se retira el par en la cima de la pila. El primer valor del par es el elemento que se ha desapilado, mientras que el segundo valor sigue representando el mínimo hasta ese momento.
 
 - **Obtener el mínimo (getMin)**: Para acceder al mínimo, se puede obtener el segundo elemento del par en la cima de la pila, que siempre contendrá el mínimo actual.
 
-#### Mincola
+### Mincola
 La **mincola** es una estructura que simula el comportamiento de una cola utilizando dos pilas de tipo **minpila**: `entrada` y `salida`. Cada una de estas pilas actúa como un tipo de dato abstracto que mantiene su propio registro del mínimo. 
 
 Al insertar un elemento, se apila en `entrada` usando la funcionalidad de **minpila**. Para obtener o sacar el elemento al frente, si `salida` está vacía, se mueven todos los elementos de `entrada` a `salida`, invirtiendo su orden. Si `salida` no está vacía, simplemente se desapila el elemento en la cima de `salida`. Para obtener el valor mínimo, se comparan los mínimos de `entrada` y `salida`, devolviendo el menor.
 
-#### Complejidad Amortizada
+### Complejidad Amortizada
 El análisis de la complejidad amortizada indica que, aunque algunas operaciones como `dequeue` y `front` pueden ser O(n) en ciertos casos, el costo promedio de las operaciones a lo largo de múltiples interacciones es O(1). Esto se debe a que cada elemento se mueve a `salida` solo una vez, y las operaciones de inserción y obtención del mínimo se realizan en O(1). Por lo tanto, el costo amortizado por operación en la mincola es O(1).
 
+
+# Dividir y Conquistar
 
 ## Subarreglo con Suma Máxima
 
@@ -217,3 +217,137 @@ Asi, tenemos un algoritmo que calcula el n-esimo numero de Fibonacci en tiempo $
 ## Desafío ultra difícil
 
 [Click aqui](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/739593dcbf4caab934ba3c16b6efd840836ccb41/2024-1/Ayudantia%208/Desbalance.pdf)
+
+# Correctitud
+
+## MergeSort
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+// Merges two subarrays of arr[].
+// First subarray is arr[left..mid]
+// Second subarray is arr[mid+1..right]
+void merge(vector<int>& arr, int left, int mid, int right){
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    // Create temp vectors
+    vector<int> L(n1), R(n2);
+
+    // Copy data to temp vectors L[] and R[]
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[left + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = arr[mid + 1 + j];
+
+    int i = 0, j = 0;
+    int k = left;
+
+    // Merge the temp vectors back 
+    // into arr[left..right]
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy the remaining elements of L[], 
+    // if there are any
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    // Copy the remaining elements of R[], 
+    // if there are any
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+// begin is for left index and end is right index
+// of the sub-array of arr to be sorted
+void mergeSort(vector<int>& arr, int left, int right){
+    if (left >= right)
+        return;
+
+    int mid = left + (right - left) / 2;
+    mergeSort(arr, left, mid);
+    mergeSort(arr, mid + 1, right);
+    merge(arr, left, mid, right);
+}
+
+// Function to print a vector
+void printVector(vector<int>& arr){
+    for (int i = 0; i < arr.size(); i++)
+        cout << arr[i] << " ";
+    cout << endl;
+}
+```
+
+**Extraido de: https://www.geeksforgeeks.org/merge-sort/**
+
+### Correctitud: Unir dos arreglos (merge)
+
+**En clase mencioné que se podía asumir la correctitud de la función `merge` o demostrarla usando un invariante de ciclo (en una prueba podrían solicitar la demostración formal de su correctitud).**
+
+Dado que contamos con dos subarreglos ordenados, $L$ y $R$, queremos demostrar que la función `merge` combina correctamente ambos subarreglos en uno solo, también ordenado.
+
+Para realizar esta demostración, utilizaremos un **invariante de ciclo**. Esta técnica es similar a la inducción matemática, donde demostramos que una condición específica se mantiene verdadera en cada iteración del ciclo.
+
+Asumimos la notación del arreglo $arr$, donde $arr[\text{left}...\text{right}]$ representa el subarreglo de $arr$ que va desde la posición $\text{left}$ hasta $\text{right}$. Notemos que si $\text{right} < \text{left}$, esto representa el conjunto vacío.
+
+La **invariante** es que, en la iteración $k$-ésima del ciclo de combinación, el subarreglo $arr[\text{left}...k]$ contiene los elementos ordenados más pequeños entre los que se han procesado de los subarreglos $L$ y $R$.
+
+- **Caso base**:  
+  Antes de entrar al ciclo, ningún elemento ha sido procesado, es decir, el subarreglo $arr[\text{left}...\text{left}-1]$ es vacío. Por definición, un subarreglo vacío está ordenado, por lo tanto, la invariante se cumple en este caso.
+
+- **Hipótesis inductiva**:  
+  Supongamos que en la iteración $k$-ésima, el subarreglo $arr[\text{left}...k]$ contiene los primeros $k$ elementos más pequeños de la combinación de $L$ y $R$, y que los índices $i$ y $j$ (que recorren $L$ y $R$, respectivamente) apuntan a las posiciones correctas de ambos subarreglos.
+
+- **Paso inductivo**:  
+  Vamos a demostrar que la invariante se sigue cumpliendo en la iteración $k + 1$:
+  Dado que $arr[\text{left}...k]$ ya contiene los $k$ elementos más pequeños de la unión de $L$ y $R$, los elementos en las posiciones actuales de $L[i]$ y $R[j]$ deben ser mayores o iguales a $arr[k]$, debido a que ambos subarreglos están ordenados. Por lo tanto, el siguiente elemento a insertar, $arr[k+1]$, será el menor entre $L[i]$ y $R[j]$.
+
+  - **Caso 1**: Si $L[i] \leq R[j]$, entonces $L[i]$ es el menor de todos los elementos restantes en $L[i...\text{len}(L)]$ y $R[j...\text{len}(R)]$. Por lo tanto, $L[i]$ será el próximo elemento que se colocará en $arr[k+1]$, y la invariante se mantendrá.
+  
+  - **Caso 2**: Si $L[i] > R[j]$, entonces $R[j]$ es el menor de todos los elementos restantes en los dos subarreglos. Así, $R[j]$ será el siguiente en insertarse en $arr[k+1]$, y el subarreglo seguirá ordenado, manteniendo la invariante.
+
+En ambos casos, se demuestra que después de la iteración $k + 1$, el subarreglo $arr[\text{left}...k+1]$ estará ordenado y contendrá los $k+1$ elementos más pequeños de la unión de $L$ y $R$, cumpliendo la invariante.
+
+Por lo tanto, la función $merge$ es correcta, ya que al finalizar el ciclo, todo el subarreglo $arr[\text{left}...\text{right}]$ estará ordenado como resultado de la combinación de los elementos de $L$ y $R$.
+
+
+### Correctitud: MergeSort(arr, left, right)
+
+Vamos a demostrar la correctitud de `MergeSort` mediante inducción sobre el tamaño del arreglo.
+
+Definimos $n$ como $n = \text{right} - \text{left} + 1$.
+
+- **Caso Base**: $1 \leq n \leq 1$  
+  Un arreglo que contiene un único elemento está ordenado por definición.
+
+- **Hipótesis inductiva**: $1 \leq n \leq k$  
+  Supondremos que para un arreglo de tamaño $n$ que cumple $1 \leq n \leq k$, `MergeSort` ordena el arreglo correctamente.
+
+- **Paso inductivo**: $1 \leq n \leq k + 1$  
+  Queremos demostrar que `MergeSort` funciona para un tamaño $n$ que cumple $1 \leq n \leq k + 1$. Dado que asumimos que funciona para $n \leq k$, solo necesitamos verificar el caso para $n = k + 1$.
+
+  Supongamos que llamamos a `MergeSort(arr, left, right)` donde $n = \text{right} - \text{left} + 1 = k + 1$ (notamos que $k + 1 > 1$). La función divide el arreglo en dos mitades, realizando las siguientes llamadas recursivas:
+
+$\text{MergeSort}(arr, \text{left}, \lfloor \frac{\text{left} + \text{right}}{2} \rfloor)$ y $\text{MergeSort}(arr, \lfloor \frac{\text{left} + \text{right}}{2} \rfloor + 1, \text{right})$
+
+Observamos que la longitud de la primera mitad, $\lfloor \frac{\text{left} + \text{right}}{2} \rfloor - \text{left} + 1$, será menor que $n$, ya que al menos quedará un elemento en la otra mitad (si esto no ocurre, la implementación es errónea, ya que podría generar un bucle infinito). Lo mismo aplica para la segunda mitad, donde la longitud será: $\text{right} - \left(\lfloor \frac{\text{left} + \text{right}}{2} \rfloor + 1\right) + 1$
+
+  Dado que ambas mitades son menores que $n$, sabemos que, por la hipótesis inductiva, esas llamadas recursivas ordenarán las mitades. A partir de la demostración anterior de la correctitud de `merge`, podemos concluir que `MergeSort` es correcto, ya que combinará adecuadamente las mitades ordenadas en un arreglo completamente ordenado.
