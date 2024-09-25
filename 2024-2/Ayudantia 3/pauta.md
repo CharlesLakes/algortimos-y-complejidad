@@ -353,3 +353,25 @@ Definimos $n$ como $n = \text{right} - \text{left} + 1$.
   Observamos que la longitud de la primera mitad, $\lfloor \frac{\text{left} + \text{right}}{2} \rfloor - \text{left} + 1$, será menor que $n$, ya que al menos quedará un elemento en la otra mitad (si esto no ocurre, la implementación es errónea, ya que podría generar un bucle infinito). Lo mismo aplica para la segunda mitad, donde la longitud será: $\text{right} - \left(\lfloor \frac{\text{left} + \text{right}}{2} \rfloor + 1\right) + 1$
 
   Dado que ambas mitades son menores que $n$, sabemos que, por la hipótesis inductiva, esas llamadas recursivas ordenarán las mitades. A partir de la demostración anterior de la correctitud de `merge`, podemos concluir que `MergeSort` es correcto, ya que combinará adecuadamente las mitades ordenadas en un arreglo completamente ordenado.
+
+## Selection Sort
+
+La invariante del *selection sort* indica que al finalizar la $i$-ésima iteración, las primeras $i$ posiciones contienen los $i$ elementos menores del arreglo, ordenados de menor a mayor.
+
+### Caso Base
+
+Al finalizar la primera iteración, la posición $A[1]$ albergará el menor valor dentro del arreglo. Esto cumple con la invariante, ya que en este caso solo hay un elemento en la primera posición.
+
+### Hipótesis Inductiva
+
+Supongamos que la invariante se cumple para la iteración $i = k$. Es decir, asumimos que las primeras $k$ posiciones del arreglo $A$ contienen los $k$ valores menores, ordenados de menor a mayor.
+
+### Paso Inductivo
+
+Al iniciar la iteración $i = k + 1$, sabemos que las primeras $k$ posiciones contienen los $k$ valores menores de $A$. A continuación, entre los valores restantes $A[k + 1...n - 1]$, buscamos el menor valor $A[l]$ donde $k + 1 \leq l < n$. Luego, hacemos un intercambio de valores entre las posiciones $k + 1$ y $l$, completando así la iteración.
+
+De esta manera, al concluir la iteración, las primeras $k + 1$ posiciones contienen los $k + 1$ valores menores, lo que cumple la invariante.
+
+Después de finalizar $n - 1$ iteraciones, el subarreglo $A[1..n - 1]$ contiene los $n - 1$ valores menores del arreglo. Por lo tanto, $A[n]$ contiene el elemento más grande. Esto explica por qué solo se necesitan $n - 1$ iteraciones para ordenar el arreglo.
+
+_Nota: Se podría demostrar la invariante del ciclo interno utilizando la invariante de ciclo también. (Esto se puede ver en los videos del aula)._
