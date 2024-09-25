@@ -2,6 +2,8 @@
 geometry: margin=30mm
 ---
 
+Nombre: Carlos Lagos Cortés
+
 # Análisis Amortizado
 
 ## Ejercicio 1
