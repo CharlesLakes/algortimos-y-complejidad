@@ -348,8 +348,8 @@ Definimos $n$ como $n = \text{right} - \text{left} + 1$.
 
   Supongamos que llamamos a `MergeSort(arr, left, right)` donde $n = \text{right} - \text{left} + 1 = k + 1$ (notamos que $k + 1 > 1$). La función divide el arreglo en dos mitades, realizando las siguientes llamadas recursivas:
 
-$\text{MergeSort}(arr, \text{left}, \lfloor \frac{\text{left} + \text{right}}{2} \rfloor)$ y $\text{MergeSort}(arr, \lfloor \frac{\text{left} + \text{right}}{2} \rfloor + 1, \text{right})$
+  $\text{MergeSort}(arr, \text{left}, \lfloor \frac{\text{left} + \text{right}}{2} \rfloor)$ y $\text{MergeSort}(arr, \lfloor \frac{\text{left} + \text{right}}{2} \rfloor + 1, \text{right})$
 
-Observamos que la longitud de la primera mitad, $\lfloor \frac{\text{left} + \text{right}}{2} \rfloor - \text{left} + 1$, será menor que $n$, ya que al menos quedará un elemento en la otra mitad (si esto no ocurre, la implementación es errónea, ya que podría generar un bucle infinito). Lo mismo aplica para la segunda mitad, donde la longitud será: $\text{right} - \left(\lfloor \frac{\text{left} + \text{right}}{2} \rfloor + 1\right) + 1$
+  Observamos que la longitud de la primera mitad, $\lfloor \frac{\text{left} + \text{right}}{2} \rfloor - \text{left} + 1$, será menor que $n$, ya que al menos quedará un elemento en la otra mitad (si esto no ocurre, la implementación es errónea, ya que podría generar un bucle infinito). Lo mismo aplica para la segunda mitad, donde la longitud será: $\text{right} - \left(\lfloor \frac{\text{left} + \text{right}}{2} \rfloor + 1\right) + 1$
 
   Dado que ambas mitades son menores que $n$, sabemos que, por la hipótesis inductiva, esas llamadas recursivas ordenarán las mitades. A partir de la demostración anterior de la correctitud de `merge`, podemos concluir que `MergeSort` es correcto, ya que combinará adecuadamente las mitades ordenadas en un arreglo completamente ordenado.
