@@ -302,7 +302,7 @@ void printVector(vector<int>& arr){
 
 ### Correctitud: Unir dos arreglos (merge)
 
-**En clase mencioné que se podía asumir la correctitud de la función `merge` o demostrarla usando un invariante de ciclo (en una prueba podrían solicitar la demostración formal de su correctitud).**
+**En ayudantía mencioné que se podía asumir la correctitud de la función `merge` o demostrarla usando un invariante de ciclo (en una prueba podrían solicitar la demostración formal de su correctitud).**
 
 Dado que contamos con dos subarreglos ordenados, $L$ y $R$, queremos demostrar que la función `merge` combina correctamente ambos subarreglos en uno solo, también ordenado.
 
