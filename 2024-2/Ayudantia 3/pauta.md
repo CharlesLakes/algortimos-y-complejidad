@@ -216,7 +216,7 @@ Asi, tenemos un algoritmo que calcula el n-esimo numero de Fibonacci en tiempo $
 
 ## Desafío ultra difícil
 
-[Click aqui](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/739593dcbf4caab934ba3c16b6efd840836ccb41/2024-1/Ayudantia%208/Desbalance.pdf)
+[Click aqui -> https://acortar.link/pVAZog](https://github.com/CharlesLakes/algortimos-y-complejidad/blob/739593dcbf4caab934ba3c16b6efd840836ccb41/2024-1/Ayudantia%208/Desbalance.pdf)
 
 # Correctitud
 
