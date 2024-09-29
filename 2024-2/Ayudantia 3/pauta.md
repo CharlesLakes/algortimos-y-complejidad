@@ -358,19 +358,19 @@ Definimos $n$ como $n = \text{right} - \text{left} + 1$.
 
 La invariante del *selection sort* indica que al finalizar la $i$-ésima iteración, las primeras $i$ posiciones contienen los $i$ elementos menores del arreglo, ordenados de menor a mayor.
 
-### Caso Base
+### Inicialización
 
 Al finalizar la primera iteración, la posición $A[1]$ albergará el menor valor dentro del arreglo. Esto cumple con la invariante, ya que en este caso solo hay un elemento en la primera posición.
 
-### Hipótesis Inductiva
+### Mantenimiento
 
 Supongamos que la invariante se cumple para la iteración $i = k$. Es decir, asumimos que las primeras $k$ posiciones del arreglo $A$ contienen los $k$ valores menores, ordenados de menor a mayor.
-
-### Paso Inductivo
 
 Al iniciar la iteración $i = k + 1$, sabemos que las primeras $k$ posiciones contienen los $k$ valores menores de $A$. A continuación, entre los valores restantes $A[k + 1...n - 1]$, buscamos el menor valor $A[l]$ donde $k + 1 \leq l < n$. Luego, hacemos un intercambio de valores entre las posiciones $k + 1$ y $l$, completando así la iteración.
 
 De esta manera, al concluir la iteración, las primeras $k + 1$ posiciones contienen los $k + 1$ valores menores, lo que cumple la invariante.
+
+### Terminación
 
 Después de finalizar $n - 1$ iteraciones, el subarreglo $A[1..n - 1]$ contiene los $n - 1$ valores menores del arreglo. Por lo tanto, $A[n]$ contiene el elemento más grande. Esto explica por qué solo se necesitan $n - 1$ iteraciones para ordenar el arreglo.
 

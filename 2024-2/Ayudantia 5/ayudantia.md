@@ -60,7 +60,7 @@ Si ambas condiciones se cumplen, entonces la afirmación $P(n)$ será cierta par
 
 ## Definición
 
-Un **invariante de ciclo** es una propiedad o condición que permanece verdadera antes y después de cada iteración de un ciclo en un algoritmo. Se utiliza en conjunto con la **inducción matemática** para demostrar la **correctitud** de un algoritmo, asegurando que al inicio y al final de cada repetición del ciclo, la propiedad se mantiene. Esto garantiza que, al terminar el ciclo, el algoritmo haya producido el resultado correcto.
+Un **invariante de ciclo** es una propiedad que se mantiene verdadera antes y después de cada iteración de un ciclo en un algoritmo, y se usa para demostrar su **correctitud**. Para probarlo, se siguen tres etapas: **inicialización**, donde se verifica que la propiedad es cierta antes de la primera iteración; **mantenimiento**, donde se prueba que si la propiedad es verdadera al inicio de una iteración, también lo es al final; y **terminación**, que garantiza que cuando el ciclo finaliza, el algoritmo ha producido el resultado correcto.
 
 ---
 

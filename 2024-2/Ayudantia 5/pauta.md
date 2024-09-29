@@ -4,15 +4,14 @@
 
 Para verificar la correctitud del algoritmo que calcula la suma de los primeros $n$ números naturales, comenzaremos definiendo la invariante. Esta invariante establece que, en cada iteración del bucle `while`, donde $k = i$, el valor de `resultado` es igual a la suma de todos los números desde $1$ hasta $k$, es decir, $\sum_{i=1}^{k} i$.
 
-### Caso Inicial
+### Inicialización
 
 Consideramos el caso base antes de entrar en el bucle `while`. En este estado, `resultado` es igual a $0$, lo que indica que no se ha procesado ninguna suma. Según la definición de la invariante, la suma de no considerar ningún elemento es $0$, lo que respeta la invariante.
 
-### Hipótesis Inductiva
+### Mantenimiento
 
 Asumimos que en la iteración $i = k$, la invariante se cumple y, por lo tanto, `resultado` es igual a $\sum_{i=1}^{k} i$.
 
-### Paso Inductivo
 
 Ahora probaremos que la invariante se mantiene para $i = k + 1$. Sabemos que, en la iteración $k$, `resultado` contiene el valor $\sum_{i=1}^{k} i$. Al procesar la siguiente operación, `resultado` se actualizará de la siguiente manera:
 
@@ -28,9 +27,9 @@ $$
 
 Por lo tanto, hemos demostrado que si la invariante es cierta para $k$, también lo es para $k + 1$. 
 
-### Conclusión
+### Terminación
 
-Dado que hemos demostrado el caso base y el paso inductivo, podemos concluir que la invariante se mantiene en cada iteración del bucle `while`, lo que confirma la correctitud del algoritmo para calcular la suma de los primeros $n$ números naturales.
+El bucle `while` se ejecuta hasta que $k = n$. Cuando esto ocurre, se habrá sumado cada valor desde $1$ hasta $n$. En este punto, la invariante garantiza que `resultado` es igual a $\sum_{i=1}^{n} i$. Dado que esta es precisamente la suma de los primeros $n$ números naturales, el algoritmo termina correctamente con el valor deseado. Esto concluye la prueba de que el algoritmo es correcto.
 
 ## Ejercicio 2
 
@@ -121,46 +120,42 @@ Para demostrar la correctitud del algoritmo Bubble Sort, analizaremos los bucles
 
 **Invariante:** Al final de cada iteración del bucle interno (índice $j$), el mayor elemento entre $arr[0..j]$ está en la posición $j$.
 
-**Caso inicial:** En la iteración $j = 0$, $arr[0]$ es el número mayor en el intervalo $arr[0...0]$. Por ende, se cumple el invariante.
+**Inicialización:** En la iteración $j = 0$, $arr[0]$ es el número mayor en el intervalo $arr[0...0]$. Por ende, se cumple el invariante.
 
-**Hipótesis inductiva:** Supongamos que al final de la $k$-ésima iteración del bucle interno, el mayor elemento entre $arr[0..k]$ está en la posición $k$.
+**Mantenimiento:** Supongamos que al final de la $k$-ésima iteración del bucle interno, el mayor elemento entre $arr[0..k]$ está en la posición $k$. En la $ (k + 1) $-ésima iteración del bucle interno, el algoritmo compara $arr[j]$ y $arr[j + 1]$. Si $arr[j] > arr[j + 1]$, se realiza un intercambio. Esto garantiza que al final de esta iteración, el mayor elemento entre $arr[0..k+1]$ se ubica en la posición $k + 1$. Por lo tanto, la invariante se mantiene.
 
-**Paso inductivo:** En la $ (k + 1) $-ésima iteración del bucle interno, el algoritmo compara $arr[j]$ y $arr[j + 1]$. Si $arr[j] > arr[j + 1]$, se realiza un intercambio. Esto garantiza que al final de esta iteración, el mayor elemento entre $arr[0..k+1]$ se ubica en la posición $k + 1$. Por lo tanto, la invariante se mantiene.
+**Terminación:** El bucle interno se ejecuta hasta que $j$ alcanza su valor máximo, lo que corresponde al último elemento no ordenado de la parte no procesada de la lista. En este punto, el mayor elemento en el rango $arr[0..j]$ estará en su posición correcta $j$, lo que asegura que el bucle ha ordenado correctamente todos los elementos dentro de ese rango.
 
 ### Invariante de ciclo para el bucle externo
 
 **Invariante:** Al final de cada iteración del bucle externo (índice $i$), los $i+1$ elementos más grandes de la lista están en las últimas posiciones.
 
-**Caso inicial:** Antes de la primera iteración ($i = 0$), no se han realizado intercambios y no hay elementos ordenados. La invariante se cumple trivialmente porque no hay elementos en la parte ordenada de la lista.
+**Inicialización:** Antes de la primera iteración ($i = 0$), no se han realizado intercambios y no hay elementos ordenados. La invariante se cumple trivialmente porque no hay elementos en la parte ordenada de la lista.
 
-**Hipótesis inductiva:** Supongamos que al final de la $k$-ésima iteración del bucle externo, los $k$ elementos más grandes están en sus posiciones correctas al final de la lista.
+**Mantenimiento:** Supongamos que al final de la $k$-ésima iteración del bucle externo, los $k$ elementos más grandes están en sus posiciones correctas al final de la lista. En la $\left(k + 1\right)$-ésima iteración, el bucle interno se ejecuta y compara pares de elementos adyacentes. El elemento más grande entre los no ordenados se mueve a la última posición de la parte no ordenada de la lista. Por lo tanto, al final de la $(k + 1)$-ésima iteración, $k + 1$ elementos más grandes estarán en la posición $n - k - 1$. Esto significa que la invariante se mantiene.
 
-**Paso inductivo:** En la $\left(k + 1\right)$-ésima iteración, el bucle interno se ejecuta y compara pares de elementos adyacentes. El elemento más grande entre los no ordenados se mueve a la última posición de la parte no ordenada de la lista. Por lo tanto, al final de la $(k + 1)$-ésima iteración, $k + 1$ elementos más grandes estarán en la posición $n - k - 1$. Esto significa que la invariante se mantiene.
-
-
-### Conclusión
-
-Dado que el invariante del bucle externo y del bucle interno se mantiene en cada iteración, y el algoritmo termina cuando todos los elementos están en su posición correcta, podemos concluir que el algoritmo Bubble Sort es correcto y ordena la lista de números enteros en orden ascendente.
-
+**Terminación:** El bucle externo termina cuando $i$ alcanza $n - 1$, es decir, cuando todos los elementos han sido ubicados en sus posiciones correctas. En este punto, la lista completa estará ordenada, cumpliéndose la invariante final de que los $n$ elementos más grandes están en sus posiciones finales, de mayor a menor en las últimas posiciones de la lista.
 
 ## Ejercicio 5
 
 La invariante será que, en la iteración $i$, el número $x$ no es divisible por ningún número en el rango de $2$ a $i$. Esto implica que para cualquier $d$ en $[2, i]$, $x \mod d \neq 0$ o $x$ es compuesto (donde $i < n$).
 
-### Caso inicial:
-Antes de la primera iteración, el intervalo de números es vacío, por lo que $x$ no es divisible por ninguno de esos números.
+### Inicialización:
+Antes de la primera iteración, el intervalo de números es vacío, por lo que $x$ no es divisible por ninguno de esos números. Esto cumple la invariante porque no hay divisores en el rango $[2, 1]$ que puedan dividir a $x$.
 
-### Hipótesis inductiva:
-Supongamos que en la $k$-ésima iteración la invariante se cumple, es decir, $x$ no es divisible por ningún número en el intervalo $[2, k]$ o que $x$ es compuesto.
+### Mantenimiento:
+Supongamos que en la $k$-ésima iteración la invariante se cumple, es decir, $x$ no es divisible por ningún número en el intervalo $[2, k]$ o que $x$ es compuesto. Demostraremos que la invariante se mantiene para la iteración $\left(k + 1\right)$. 
 
-### Paso inductivo:
-Demostraremos que se cumple para la $\left(k + 1\right)$-ésima iteración. Si $x$ era divisible por algún número en el intervalo $[2, k]$, entonces $x$ es compuesto y se retorna `false` en la iteración anterior. 
+- Si $x$ es divisible por algún número en $[2, k]$, entonces ya se ha detectado que $x$ es compuesto, y el algoritmo habría retornado `false` en una iteración anterior.
+  
+- Si $x$ no es divisible por ningún número en $[2, k]$, entonces llegamos a la iteración $k + 1$, donde se presentan dos posibilidades:
 
-Por lo tanto, para llegar a la iteración $k + 1$, se asume que $x$ no es divisible por ningún número en $[2, k]$. Así, se presentan dos posibilidades:
+  1. **Si $x$ es divisible por $k + 1$** (donde $k + 1 < x$): En este caso, se concluye que $x$ es compuesto, y el algoritmo retornará `false`.
 
-1. **Si $x$ es divisible por $k + 1$** (donde $k + 1 < x$): En este caso, $x$ es divisible por $k + 1$, y, por lo tanto, también será divisible por $x/(k + 1)$.
+  2. **Si $x$ no es divisible por ningún número en $[2, k + 1]$**: Esto significa que para cada número $d$ en este intervalo, también se cumple que $x \mod d \neq 0$, manteniéndose la invariante.
 
-2. **Si $x$ no es divisible por ningún número en $[2, k + 1]$**: Esto significa que para cada número $d$ en este intervalo, también se cumple que $x \mod d \neq 0$.
+### Terminación:
+El bucle finaliza cuando se ha verificado que $x$ no es divisible por ningún número en el rango $[2, \sqrt{x}]$. En este punto, si no se ha encontrado ningún divisor, se concluye que $x$ es primo y el algoritmo retorna `true`. De esta manera, la invariante se cumple hasta la terminación, garantizando que el algoritmo ha evaluado correctamente si $x$ es primo o compuesto.
 
 ### Demostración de la necesidad de revisar solo hasta $\sqrt{x}$:
 Es importante notar que si $x$ tiene un divisor distinto de $1$ y $x$, al menos uno de esos divisores debe ser menor o igual a $\sqrt{x}$. Esto se debe a que, si ambos divisores son mayores que $\sqrt{x}$, su producto sería mayor que $x$, lo cual es una contradicción. Por lo tanto, basta con verificar la divisibilidad de $x$ solo con los números en el rango de $2$ a $\sqrt{x}$. Si $x$ no es divisible por ningún número en este rango, se puede concluir que $x$ es primo.
