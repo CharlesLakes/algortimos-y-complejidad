@@ -206,7 +206,7 @@ $f_i = 0, \, \forall i \geq 9$
 
 # Ejemplo: Prefi-Primos
 
-* El ejemplo anterior es extremo, pasa de 108 operaciones a 664.  
+* El ejemplo anterior es extremo, pasa de $10^8$ operaciones a 664.  
 * Aun así, en muchísimos otros ejemplos también se reduce la complejidad asintótica.
 
 ---
@@ -233,10 +233,10 @@ for (int i = x; i <= N; i += x) print(i);
 
 # Branch and bound
 
-* En cada nodo del árbol de backtracking se computan cotas inferior y superior \( L, U \) (con \( L \leq U \)) a las posibles soluciones desde ese nodo.  
+* En cada nodo del árbol de backtracking se computan cotas inferior y superior $L, U$ (con $L \leq U$) a las posibles soluciones desde ese nodo.  
 * Se mantiene una variable global `best` con el valor de la mejor solución encontrada.  
-* Para un problema de minimización, `best` tiene en todo momento el mínimo \( U \) que hemos visto en todo el algoritmo.  
-* Para un problema de minimización, si \( L \geq \text{best} \) podemos descartar ese nodo y todo su subárbol.  
+* Para un problema de minimización, `best` tiene en todo momento el mínimo $U$ que hemos visto en todo el algoritmo.  
+* Para un problema de minimización, si $L \geq \text{best}$ podemos descartar ese nodo y todo su subárbol.  
 * Lo esencial: meter un `if (L >= best) return;` al comienzo de la función recursiva.
 
 ---
