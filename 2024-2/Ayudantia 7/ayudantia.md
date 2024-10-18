@@ -20,6 +20,8 @@ header: Ayudantía 7
 Carlos Lagos - carlos.lagosc@usm.cl
 Matias Francia - matias.francia@usm.cl
 
+Problemas: https://vjudge.net/group/algoco2024
+
 ---
 
 # Greedy
