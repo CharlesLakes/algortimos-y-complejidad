@@ -21,4 +21,5 @@ Recursos específicos:
 
 Ejercicios relacionados a la ayudantía:
 
-* [VJudge Contest](https://vjudge.net/contest/650297)
+* [VJudge Contest/C++](https://vjudge.net/contest/650297)
+* [Grupo Codeforces](https://vjudge.net/group/algoco2024)
