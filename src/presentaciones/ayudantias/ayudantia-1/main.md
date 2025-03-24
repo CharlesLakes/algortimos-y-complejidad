@@ -13,4 +13,4 @@ header: Ayudantía 1
 ---
 
 ## Sección 1
-Sección
+Esta es una sección
