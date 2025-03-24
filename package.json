@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Ayudantías de algoritmos y complejidad",
   "scripts": {
-    "start": "marp --server --theme beam.css src",
-    "html": "marp --html --theme beam.css src/**/*.md",
-    "pdf": "marp --pdf --pptx-editable --theme beam.css src/**/*.md",
-    "pptx": "marp --pptx --theme beam.css src/**/*.md"
+    "start": "marp --server --watch --theme beam.css src/presentaciones",
+    "html": "marp --html --theme beam.css src/presentaciones/**/*.md",
+    "pdf": "marp --pdf --theme beam.css src/presentaciones/**/*.md",
+    "pptx": "marp --pptx --theme beam.css src/presentaciones/**/*.md",
+    "pptxd": "marp --pptx --pptx-editable --theme beam.css src/presentaciones/**/*.md"
   },
   "dependencies": {},
   "devDependencies": {
