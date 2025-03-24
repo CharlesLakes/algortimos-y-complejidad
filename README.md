@@ -1,8 +1,15 @@
 # Ayudantías Algoritmos y Complejidad
 
-## Instalación y Uso
+## Estructura del Repositorio  
+Los archivos PDF de las presentaciones, organizados según cápsulas y ayudantías, se encuentran en la carpeta `src/presentaciones/*`.
 
-### Instalación
+## Colaboración usando MARP
+
+Esta sección está dirigida a los ayudantes del ramo, pero cualquier persona puede colaborar si encuentra un error o mejora posible.
+
+### Instalación y Uso
+
+#### Instalación
 
 Asegúrate de tener **Node.js** instalado en tu sistema. Luego, instala las dependencias del proyecto ejecutando:
 
@@ -10,9 +17,9 @@ Asegúrate de tener **Node.js** instalado en tu sistema. Luego, instala las depe
 npm install
 ```
 
-### Uso
+#### Uso
 
-#### Iniciar el Servidor de Presentaciones
+##### Iniciar el Servidor de Presentaciones
 
 Para iniciar el servidor y visualizar las presentaciones en tiempo real, usa:
 
@@ -22,7 +29,7 @@ npm start
 
 Esto iniciará un servidor en el directorio `src/`, utilizando el tema `beam.css`.
 
-#### Generar Presentaciones
+##### Generar Presentaciones
 
 Puedes generar archivos en diferentes formatos usando los siguientes comandos:
 
@@ -36,7 +43,7 @@ Puedes generar archivos en diferentes formatos usando los siguientes comandos:
   ```sh
   npm run pdf
   ```
-  Genera presentaciones en formato PDF con edición habilitada en PPTX.
+  Genera presentaciones en formato PDF.
 
 - **PPTX:**
   ```sh
