@@ -1,19 +1,27 @@
 ---
 marp: true
 math: mathjax
-theme: beam
 paginate: true
 footer: Algoritmos y Complejidad
 header: Ayudantía 1
 ---
 
-# Ayudantía 1
-
-*Introducción a la Biblioteca Estándar de C++: STL*
+<!-- _class: title -->
+# Ayudantia 1
+- Carlos Lagos - carlos.lagosc@usm.cl  
+- Nangel Coello - nangel.coello@usm.cl  
+- Rafael Baeza - rafael.baezam@usm.cl  
+- Benjamín Cárdenas - benjamin.cardenas@usm.cl 
 
 ---
 
-## ¿Qué es la STL?
+# Contenidos
+
+- *Introducción a la Biblioteca Estándar de C++: STL*
+
+---
+
+# ¿Qué es la STL?
 
 >Es un conjunto de clases y funciones basadas en plantillas (templates).
 >>Implementa **estructuras de datos** y **algoritmos** básicos (listas, pilas, colas, búsqueda, orden, etc).<br>
@@ -21,7 +29,7 @@ header: Ayudantía 1
 
 ---
 
-## Componentes de la STL
+# Componentes de la STL
 
 La STL se compone de 4 elementos principales:
 
@@ -31,7 +39,7 @@ La STL se compone de 4 elementos principales:
 
 ---
 
-## Contenedores
+# Contenedores
 
 - Contenedores de secuencia
 Array, Vector, Deque, List, Forward List
@@ -44,8 +52,15 @@ Unordered Set, Unordered Map, Unordered Multiset, Unordered Multimap
 
 ---
 
-### Algoritmos Manipulativos (Modifican o reordenan los elementos)
+# Algoritmos Manipulativos (Modifican o reordenan los elementos)
 
+<style scoped>
+table{
+    font-size:20px;
+}
+</style>
+
+<div style="display:flex; justify-content:center;">
 
 |**Función**|**Operación**|
 |-----------|-------------|
@@ -59,7 +74,19 @@ Unordered Set, Unordered Map, Unordered Multiset, Unordered Multimap
 |**remove**|Elimina elementos con un valor específico.|
 |**unique**| Elimina duplicados consecutivos.|
 
+</div>
+
 ---
+
+<style scoped>
+pre{
+    font-size:20px;
+}
+</style>
+
+# Algoritmos Manipulativos (Modifican o reordenan los elementos)
+
+
 ```c++
 #include<vector>
 #include<algorithm>
@@ -84,7 +111,15 @@ int main(){
 
 ---
 
-### Algoritmos No Manipulativos (Operan sin modificar el contenido)
+<style scoped>
+table{
+    font-size:20px;
+}
+</style>
+
+# Algoritmos No Manipulativos (Operan sin modificar el contenido)
+
+<div style="display:flex; justify-content:center;">
 
 | **Función**| **Operación**|
 |------------|--------------|
@@ -97,15 +132,17 @@ int main(){
 |**is_sorted**|Verifica si un rango está ordenado.|
 |**partial_sum**|Calcula la suma acumulada.|
 
+</div>
+
 ---
 
-## Iteradores
+# Iteradores
 
 Objetos similares a punteros que sirven para recorrer los contenedores.
 
 ---
 
-## Beneficios de la STL
+# Beneficios de la STL
 
 - **Código genérico y reutilizable:** Escribe algoritmos que funcionan con múltiples tipos.
 - **Enfoque en la solución de problemas:** Menos código de bajo nivel y más énfasis en la lógica.
@@ -113,7 +150,7 @@ Objetos similares a punteros que sirven para recorrer los contenedores.
 
 ---
 
-## Limitaciones de la STL
+# Limitaciones de la STL
 
 - **Sobrecarga de rendimiento:** La generalidad puede afectar la eficiencia en casos específicos.
 - **Complejidad al depurar:** Las abstracciones pueden dificultar la identificación de errores.
