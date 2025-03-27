@@ -7,7 +7,7 @@ header: Ayudantía 1
 ---
 
 <!-- _class: title -->
-# Ayudantia 1
+# Ayudantía 1
 - Carlos Lagos - carlos.lagosc@usm.cl  
 - Nangel Coello - nangel.coello@usm.cl  
 - Rafael Baeza - rafael.baezam@usm.cl  
@@ -19,13 +19,13 @@ header: Ayudantía 1
 
 1. Uso del juez en línea y estructura de los problemas
 2. Introducción a la Biblioteca Estándar de C++: STL
+    1. Contenedores
+    2. Iteradores
+    3. Algoritmos
 
 ---
 
-# Contenido
-
-1. **Uso del juez en línea y estructura de los problemas**
-2. Introducción a la Biblioteca Estándar de C++: STL
+## Uso del juez en línea y estructura de los problemas
 
 ---
 
@@ -79,10 +79,7 @@ Cada problema tiene un tiempo límite y un límite de memoria. Si la solución e
 
 ---
 
-# Contenido
-
-1. Uso del juez en línea y estructura de los problemas
-2. **Introducción a la Biblioteca Estándar de C++: STL**
+## Introducción a la Biblioteca Estándar de C++: STL
 
 ---
 
@@ -94,13 +91,33 @@ Cada problema tiene un tiempo límite y un límite de memoria. Si la solución e
 
 ---
 
+# Beneficios de la STL
+
+- **Código genérico y reutilizable:** Escribe algoritmos que funcionan con múltiples tipos.
+- **Enfoque en la solución de problemas:** Menos código de bajo nivel y más énfasis en la lógica.
+- **Gestión de memoria:** Reduce errores comunes como pérdidas de memoria.
+
+---
+
+# Limitaciones de la STL
+
+- **Sobrecarga de rendimiento:** La generalidad puede afectar la eficiencia en casos específicos.
+- **Complejidad al depurar:** Las abstracciones pueden dificultar la identificación de errores.
+- **Control de memoria:** Menor control sobre detalles de asignación y liberación.
+- **Integración con estructuras personalizadas:** Algunas estructuras a medida pueden requerir soluciones específicas.
+---
+
 # Componentes de la STL
 
-La STL se compone de 4 elementos principales:
+La STL se compone de 3 elementos principales:
 
-1. **Contenedores** (Estructuras de datos)  
-2. **Algoritmos**  
-3. **Iteradores**
+1. **Contenedores**
+2. **Iteradores**
+3. **Algoritmos**  
+
+---
+
+## Contenedores
 
 ---
 
@@ -344,6 +361,89 @@ cout << get<1>(tupla) << endl; // Imprime el segundo elemento ("uno")
 cout << get<2>(tupla) << endl; // Imprime el tercer elemento (3.14)
 ```
 
+---
+
+## Iteradores
+Objetos similares a punteros que sirven para recorrer los contenedores.
+
+---
+
+# Iteradores
+
+Un **iterador** en C++ es un objeto que permite recorrer una estructura de datos de manera secuencial. Aunque los iteradores son similares a los punteros porque permiten acceder a los elementos de una estructura, se diferencian en que ofrecen más funcionalidades y son más fáciles de usar. A diferencia de los punteros, los iteradores no almacenan directamente direcciones de memoria. **No es necesario definir memoria dinámica para usarlos.**
+
+---
+
+# Iteradores - Acceder al valor
+
+Dado un iterador 'it', para acceder a su valor se hace de la misma forma que con los punteros, es decir, utilizando '*it' y, en caso de que el valor sea un `struct` o algo similar, se puede utilizar 'it->valor'.
+
+---
+
+# Iteradores - Sumar
+
+Se puede utilizar '++' para ir al siguiente elemento y '--' para retroceder. Por ejemplo, dado el iterador 'it', si utilizamos 'it++' en el siguiente vector:
+
+| Etapa   | 1  | 2  | 4  | 6  | 7  | END |
+| ------- | -- | -- | -- | -- | -- | --- |
+| Antes   |    | it |    |    |    |     |
+| Después |    |    | it |    |    |     |
+
+---
+
+# Iteradores - Resta
+
+En algunos contenedores (no todos), se pueden restar.
+
+```c++
+/*
+1   2   4   6   7   END
+    it1     it2
+*/
+int diff = it2 - it1;
+// diff -> 2
+```
+
+
+---
+
+<style scoped>
+    pre{
+        font-size:18px;
+    }
+</style>
+
+# Iteradores - Ejemplo
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    vector<int> numeros = {1,2,3,4,5};
+    
+    // Invierte el vector
+    reverse(nums.begin(),nums.end());
+
+    set<int> conjunto = {1,7,10};
+
+    for(auto it = numeros.begin(); it != numeros.end(); it++){
+        cout << *it << endl;
+    }
+
+    for(auto it = conjunto.begin(); it != conjunto.end(); it++){
+        cout << *it << endl;
+    }
+
+    return 0;
+}
+
+```
+
+
+---
+
+## Algoritmos
 
 ---
 
@@ -371,39 +471,6 @@ table{
 |**unique**| Elimina duplicados consecutivos.|
 
 </div>
-
----
-
-<style scoped>
-pre{
-    font-size:20px;
-}
-</style>
-
-# Algoritmos Manipulativos (Modifican los elementos)
-
-
-```c++
-#include<vector>
-#include<algorithm>
-#include<iostream>
-
-using namespace std;
-
-int main(){
-    vector<int> ejemplo = {1, 2, 3, 4, 5, 6, 7};
-    vector<int> copia_ejemplo(ejemplo.size());
-
-    copy(ejemplo.begin(), ejemplo.end(), copia_ejemplo.begin());
-    reverse(copia_ejemplo.begin(), copia_ejemplo.end());
-
-    for(int i : copia_ejemplo) cout << i << ' ';
-
-    return 0;
-}
-
-//output: 7 6 5 4 3 2 1
-```
 
 ---
 
@@ -504,19 +571,52 @@ cout << endl;
 ---
 
 <style scoped>
+pre{
+    font-size:20px;
+}
+</style>
+
+# Algoritmos - Copy
+
+
+```c++
+#include<vector>
+#include<algorithm>
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    vector<int> ejemplo = {1, 2, 3, 4, 5, 6, 7};
+    vector<int> copia_ejemplo(ejemplo.size());
+
+    copy(ejemplo.begin(), ejemplo.end(), copia_ejemplo.begin());
+    reverse(copia_ejemplo.begin(), copia_ejemplo.end());
+
+    for(int i : copia_ejemplo) cout << i << ' ';
+
+    return 0;
+}
+
+//output: 7 6 5 4 3 2 1
+```
+
+---
+
+<style scoped>
 table{
     font-size:20px;
 }
 </style>
 
-# Algoritmos No Manipulativos (Operan sin modificar el contenido)
+# Algoritmos No Manipulativos (Operan sin modificar)
 
 <div style="display:flex; justify-content:center;">
 
 | **Función**| **Operación**|
 |------------|--------------|
-|**lower_bound**|Encuentra el valor mas a la izquierda que es mayor o igual a x|
-|**lower_bound**|Encuentra el valor mas a la izquierda que es mayor a x|
+|**lower_bound**|Encuentra el valor mas a la izquierda que es mayor o igual a x.|
+|**upper_bound**|Encuentra el valor mas a la izquierda que es mayor a x.|
 |**max_element**|Encuentra el elemento máximo.|
 |**min_element**|Encuentra el elemento mínimo.|
 |**accumulate**|Suma los elementos de un rango.|
@@ -530,30 +630,25 @@ table{
 
 ---
 
-# Iteradores
+# Algoritmos - Lower Bound y Upper Bound
 
-Objetos similares a punteros que sirven para recorrer los contenedores.
-
----
-
-# Beneficios de la STL
-
-- **Código genérico y reutilizable:** Escribe algoritmos que funcionan con múltiples tipos.
-- **Enfoque en la solución de problemas:** Menos código de bajo nivel y más énfasis en la lógica.
-- **Gestión de memoria:** Reduce errores comunes como pérdidas de memoria.
+Las funciones `lower_bound` y `upper_bound` se utilizan para buscar elementos en contenedores ordenados. `lower_bound` devuelve un iterador al primer elemento que no es menor que el valor especificado, mientras que `upper_bound` devuelve un iterador al primer elemento mayor que el valor especificado.
 
 ---
 
-# Limitaciones de la STL
+# Algoritmos - Lower Bound y Upper Bound
 
-- **Sobrecarga de rendimiento:** La generalidad puede afectar la eficiencia en casos específicos.
-- **Complejidad al depurar:** Las abstracciones pueden dificultar la identificación de errores.
-- **Control de memoria:** Menor control sobre detalles de asignación y liberación.
-- **Integración con estructuras personalizadas:** Algunas estructuras a medida pueden requerir soluciones específicas.
+```cpp
+vector<int> numeros = {1, 2, 4, 4, 5, 6, 7};
+
+auto it_lower = lower_bound(numeros.begin(), numeros.end(), 4);
+auto it_upper = upper_bound(numeros.begin(), numeros.end(), 4);
+
+cout << "Lower bound de 4: " << distance(numeros.begin(), it_lower) << endl; // Índice del primer 4
+cout << "Upper bound de 4: " << distance(numeros.begin(), it_upper) << endl; // Índice del primer elemento mayor que 4
+```
 
 ---
-
-
 # ¡Gracias!
 
 Preguntas y comentarios.
