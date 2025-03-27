@@ -20,6 +20,9 @@ section {
   background-position: center bottom;
   background-size: 150% 1em;
   padding: 2em;
+  display: flex;
+  justify-content: center;
+
 }
 
 header {
