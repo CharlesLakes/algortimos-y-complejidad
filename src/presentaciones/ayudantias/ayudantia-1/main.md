@@ -79,6 +79,14 @@ Cada problema tiene un tiempo límite y un límite de memoria. Si la solución e
 
 ---
 
+# Contest de Ejemplo  
+
+Puedes acceder al siguiente contest de ejemplo para practicar lo visto anteriormente y reforzar los conceptos que abordaremos en esta ayudantía.  
+
+[https://vjudge.net/contest/705099](https://vjudge.net/contest/705099)
+
+---
+
 ## Introducción a la Biblioteca Estándar de C++: STL
 
 ---
