@@ -649,6 +649,7 @@ cout << "Upper bound de 4: " << distance(numeros.begin(), it_upper) << endl; // 
 ```
 
 ---
-# ¡Gracias!
 
-Preguntas y comentarios.
+<div align="center">
+<h2 style="font-size:400px;">FIN</h2>
+</div>
