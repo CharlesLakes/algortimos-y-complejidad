@@ -20,9 +20,18 @@ section {
   background-position: center bottom;
   background-size: 150% 1em;
   padding: 2em;
-  display: flex;
-  justify-content: center;
-
+  
+  /*  
+  Code added by Benjamin Cardenas.  
+  Not part of the original theme.  
+  -- START --  
+  */  
+  display: flex;  
+  justify-content: center;  
+  /*  
+    -- END --  
+  */
+  
 }
 
 header {
