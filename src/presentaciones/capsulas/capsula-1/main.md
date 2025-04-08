@@ -8,7 +8,7 @@ header: Ayudantía 1
 ---
 
 <!-- _class: title -->
-# Capsula 1
+# Cápsula 1
 - Carlos Lagos - carlos.lagosc@usm.cl  
 - Nangel Coello - nangel.coello@usm.cl  
 - Rafael Baeza - rafael.baezam@usm.cl  
