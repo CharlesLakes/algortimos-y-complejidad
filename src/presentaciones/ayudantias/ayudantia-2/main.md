@@ -88,16 +88,16 @@ header: Ayudantía 1
 # Análisis Asintótico  
 ## Ejercicios
 
-- Demuestra si se cumple que $n^3 + 40n^2 + n + 5 \in O(n^3)$, y en caso afirmativo, encuentra valores válidos para $n_0$ y $c$.
-- Demuestra si se cumple que $3^n + 5^n \in \Theta(5^n)$, y en caso afirmativo, encuentra valores válidos para $n_0$ y $c$.
-- Indica si se cumple que $\log_2(n) \in O(\log_{1000}(n))$.
-- Indica si, para cualquier constante fija $a > 0$, $nlog_{1024}(a) \in \Omega(nlog2(a))$.
+* Demuestra si se cumple que $n^3 + 40n^2 + n + 5 \in O(n^3)$, y en caso afirmativo, encuentra valores válidos para $n_0$ y $c$.
+* Demuestra si se cumple que $3^n + 5^n \in \Theta(5^n)$, y en caso afirmativo, encuentra valores válidos para $n_0$ y $c$.
+* Indica si se cumple que $\log_2(n) \in O(\log_{1000}(n))$.
+* Indica si, para cualquier constante fija $a > 0$, $nlog_{1024}(a) \in \Omega(nlog2(a))$.
 
 ---
 
 # Análisis Asintótico
 
-# Mejor Caso, Peor Caso y Caso Promedio
+## Mejor Caso, Peor Caso y Caso Promedio
 
 * **Peor caso**: La situación más desfavorable para el algoritmo, donde el tiempo de ejecución es máximo.
 
@@ -107,3 +107,74 @@ header: Ayudantía 1
 
 ---
 
+# Análisis Asintótico
+
+Responde las siguientes preguntas utilizando notación asintótica, específicamente la notación $O(n)$.
+
+<div style="display:flex;">
+
+<div style="display:flex;justify-content:center;align-items:center; width:50%;">
+
+```c++
+
+int something(vector<int> nums, int x){
+    int n = nums.size();
+    unordered_map<int,int> aux;
+    
+    int prefix = 0;
+    aux[prefix]++;
+    int ans = 0;
+    for(int i = 0; i < n; i++){
+        prefix += nums[i];
+        ans += aux[prefix - x];
+    }
+
+    return ans;
+}
+
+```
+
+</div>
+
+<div style="display:flex;justify-content:center;align-items:center; width:50%;">
+
+* ¿Mejor caso temporal?
+* ¿Peor caso temporal?
+* ¿Peor caso espacial?
+
+</div>
+
+</div>
+
+---
+
+# Análisis Asintótico
+
+Responde las siguientes preguntas utilizando notación asintótica, específicamente la notación $O(n)$.
+
+<style scoped>
+    img{
+        width:450px;
+    }
+</style>
+
+<div style="display:flex;">
+
+![alt text](image.png)
+
+<div style="display:flex;justify-content:center;align-items:center; width:50%;">
+
+* ¿Mejor caso temporal?
+* ¿Peor caso temporal?
+* ¿Peor caso espacial?
+* ¿Caso promedio temporal?
+
+</div>
+
+</div>
+
+---
+
+<div align="center">
+<h2 style="font-size:400px;">FIN</h2>
+</div>
