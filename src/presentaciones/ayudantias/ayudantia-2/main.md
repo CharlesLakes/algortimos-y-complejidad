@@ -84,3 +84,26 @@ header: Ayudantía 1
   $$\lim_{n \to \infty} \frac{f(n)}{g(n)} = k, \quad k \in \mathbb{R}^+, \quad k \neq \infty$$
 
 ---
+
+# Análisis Asintótico  
+## Ejercicios
+
+- Demuestra si se cumple que $n^3 + 40n^2 + n + 5 \in O(n^3)$, y en caso afirmativo, encuentra valores válidos para $n_0$ y $c$.
+- Demuestra si se cumple que $3^n + 5^n \in \Theta(5^n)$, y en caso afirmativo, encuentra valores válidos para $n_0$ y $c$.
+- Indica si se cumple que $\log_2(n) \in O(\log_{1000}(n))$.
+- Indica si, para cualquier constante fija $a > 0$, $nlog_{1024}(a) \in \Omega(nlog2(a))$.
+
+---
+
+# Análisis Asintótico
+
+# Mejor Caso, Peor Caso y Caso Promedio
+
+* **Peor caso**: La situación más desfavorable para el algoritmo, donde el tiempo de ejecución es máximo.
+
+* **Mejor caso**: La situación más favorable para el algoritmo, donde el tiempo de ejecución es mínimo.
+
+* **Caso promedio**: El rendimiento esperado considerando una distribución típica de entradas.
+
+---
+
