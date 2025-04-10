@@ -109,7 +109,7 @@ header: Ayudantía 1
 
 # Análisis Asintótico
 
-Responde las siguientes preguntas utilizando notación asintótica, específicamente la notación $O(n)$.
+Responde las siguientes preguntas utilizando notación asintótica, específicamente la notación $O$.
 
 <div style="display:flex;">
 
@@ -150,7 +150,7 @@ int something(vector<int> nums, int x){
 
 # Análisis Asintótico
 
-Responde las siguientes preguntas utilizando notación asintótica, específicamente la notación $O(n)$.
+Responde las siguientes preguntas utilizando notación asintótica, específicamente la notación $O$.
 
 <style scoped>
     img{
