@@ -3,7 +3,7 @@ marp: true
 math: mathjax
 paginate: true
 footer: Algoritmos y Complejidad
-header: Ayudantía 1
+header: Ayudantía 3
 ---
 
 <!-- _class: title -->
