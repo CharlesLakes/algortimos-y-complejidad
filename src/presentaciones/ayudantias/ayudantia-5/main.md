@@ -7,7 +7,7 @@ header: Ayudantía 5
 ---
 
 <!-- _class: title -->
-# Ayudantía 4
+# Ayudantía 5
 - Carlos Lagos - carlos.lagosc@usm.cl  
 - Nangel Coello - nangel.coello@usm.cl  
 - Rafael Baeza - rafael.baezam@usm.cl  
