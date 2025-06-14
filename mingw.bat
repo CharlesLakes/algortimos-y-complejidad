@@ -30,27 +30,9 @@ if errorlevel 1 (
 
 del "!MINGW_ZIP!" >nul
 
-REM Agregar bin al PATH del usuario (sin truncar con setx)
+REM Agregar bin al PATH del usuario
 set "MINGW_BIN=!MINGW_DIR!\bin"
-
-REM Leer PATH actual
-for /f "tokens=3*" %%A in ('reg query "HKCU\Environment" /v PATH 2^>nul') do (
-    set "OLD_PATH=%%B"
-)
-
-REM Si no existe, iniciar vacío
-if not defined OLD_PATH (
-    set "OLD_PATH="
-)
-
-echo !OLD_PATH! | findstr /I /C:"!MINGW_BIN!" >nul
-if errorlevel 1 (
-    set "NEW_PATH=!OLD_PATH!;!MINGW_BIN!"
-    reg add "HKCU\Environment" /v PATH /d "!NEW_PATH!" /f >nul
-    echo ✅ Ruta agregada al PATH del usuario.
-) else (
-    echo ℹ️ La ruta ya está en el PATH.
-)
+setx PATH "%PATH%;!MINGW_BIN!"
 
 echo ✅ MinGW instalado en: !MINGW_DIR!
 echo 🔄 Cierra y vuelve a abrir el CMD para que el PATH se actualice.
