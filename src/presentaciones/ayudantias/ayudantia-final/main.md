@@ -58,7 +58,7 @@ int main() {
     for(int i = 0; i < n; i++) cin >> as[i];
     for(int i = 0; i < m; i++) cin >> bs[i];
 
-    (bs.begin(),bs.end());
+    sort(bs.begin(),bs.end());
 
     as[0] = min(as[0],bs[0] - as[0]);
 
