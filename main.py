@@ -1,34 +1,56 @@
 import sys
 import pandas as pd
 
-def get_users(path):
-    users = []
-    with open(path) as file:
+def load_usernames(file_path):
+    """
+    Loads a list of usernames from a text file.
+    Each line is expected to contain one username.
+    """
+    usernames = []
+    with open(file_path, 'r') as file:
         for line in file:
-            line = line.strip()
-            users.append(line)
-    return users
+            usernames.append(line.strip())
+    return usernames
 
-def main(excel_path, mapping_path):
-    df_csv = pd.read_excel(excel_path)
-    users = get_users(mapping_path)
+def load_team_scores(excel_path):
+    """
+    Loads team scores from an Excel file.
+    Returns a dictionary mapping team names (in lowercase) to their score.
+    """
+    df = pd.read_excel(excel_path)
+    team_scores = {}
 
-    users_problems = {}
+    for _, row in df.iterrows():
+        team_name = str(row["Team"]).strip().lower()
+        score = int(row["Score"])
+        team_scores[team_name] = score
 
-    for i, row in df_csv.iterrows():
-        users_problems[str(row["Team"]).lower()] = int(row["Score"])
-    
-    for user in users:
-        flag = False
-        for full_user in users_problems:
-            if user.lower() not in full_user.lower():
-                continue
-            
-            print(user,users_problems[full_user],sep="\t")
-            flag = True
-            break
-        if not flag:
-            print(user,0,sep="\t")
+    return team_scores
+
+def match_usernames_to_scores(usernames, team_scores):
+    """
+    For each username, prints its corresponding score based on partial match with team names.
+    If no match is found, prints 0 as the score.
+    """
+    for username in usernames:
+        matched = False
+        for team_name in team_scores:
+            if username.lower() in team_name:
+                print(username, team_scores[team_name], sep="\t")
+                matched = True
+                break
+        if not matched:
+            print(username, 0, sep="\t")
+
+def main(excel_path, usernames_path):
+    usernames = load_usernames(usernames_path)
+    team_scores = load_team_scores(excel_path)
+    match_usernames_to_scores(usernames, team_scores)
 
 if __name__ == "__main__":
-    main(*sys.argv[1:])
+    if len(sys.argv) != 3:
+        print("Usage: python script.py <excel_file> <usernames_file>")
+        sys.exit(1)
+
+    main(sys.argv[1], sys.argv[2])
+
