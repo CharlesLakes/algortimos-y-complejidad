@@ -1,0 +1,16 @@
+{
+  "name": "algoritmos-y-complejidad",
+  "version": "1.0.0",
+  "description": "Ayudantías de algoritmos y complejidad",
+  "scripts": {
+    "start": "marp --server --watch --html --allow-local-files --theme beam.css src/presentaciones",
+    "html": "marp --html --allow-local-files --theme beam.css src/presentaciones/**/*.md",
+    "pdf": "marp --pdf --html --allow-local-files --theme beam.css src/presentaciones/**/*.md",
+    "pptx": "marp --pptx --html --allow-local-files --theme beam.css src/presentaciones/**/*.md",
+    "pptxd": "marp --pptx --html --allow-local-files --pptx-editable --theme beam.css src/presentaciones/**/*.md"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.1.2"
+  }
+}
