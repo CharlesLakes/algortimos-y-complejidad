@@ -62,57 +62,57 @@ Se llama salida estándar porque no depende de un archivo y, externamente, esta 
 
 # Tipos de datos básicos
 
-* **int** → Entero (32 bits)
-* **long long** → Entero largo (64 bits)
-* **float** → Número decimal de precisión simple (32 bits)
-* **double** → Número decimal de precisión doble (64 bits)
-* **long double** → Número decimal de precisión extendida (80 o 128 bits según el compilador)
-* **bool** → Valor lógico (true o false) (8 bits, aunque solo usa 1 bit efectivo)
-* **char** → Carácter (8 bits)
+* **int**: Entero (32 bits)
+* **long long**: Entero largo (64 bits)
+* **float**: Número decimal de precisión simple (32 bits)
+* **double**: Número decimal de precisión doble (64 bits)
+* **long double**: Número decimal de precisión extendida (80 o 128 bits según el compilador)
+* **bool**: Valor lógico (true o false) (8 bits, aunque solo usa 1 bit efectivo)
+* **char**: Carácter (8 bits)
 
 ---
 
 # Operaciones C++
 
-* **Suma (`+`)** → Suma dos valores.
-* **Resta (`-`)** → Resta un valor de otro.
-* **Multiplicación (`*`)** → Multiplica dos valores.
-* **División (`/`)** → Divide un valor entre otro (entera si son enteros).
-* **Módulo (`%`)** → Resto de la división entera.
-* **Incremento (`++`)** → Aumenta en 1 el valor de una variable.
-* **Decremento (`--`)** → Disminuye en 1 el valor de una variable.
-* **Asignación (`=`)** → Asigna un valor a una variable.
-* **Asignaciones combinadas (`+=`, `-=`, `*=`, `/=`, `%=`)** → Operación y asignación en un solo paso.
+* **Suma (`+`)**: Suma dos valores.
+* **Resta (`-`)**: Resta un valor de otro.
+* **Multiplicación (`*`)**: Multiplica dos valores.
+* **División (`/`)**: Divide un valor entre otro (entera si son enteros).
+* **Módulo (`%`)**: Resto de la división entera.
+* **Incremento (`++`)**: Aumenta en 1 el valor de una variable.
+* **Decremento (`--`)**: Disminuye en 1 el valor de una variable.
+* **Asignación (`=`)**: Asigna un valor a una variable.
+* **Asignaciones combinadas (`+=`, `-=`, `*=`, `/=`, `%=`)**: Operación y asignación en un solo paso.
 
 ---
 
 # Operadores de comparación
 
-* **Mayor que (`>`)** → Verdadero si el valor de la izquierda es mayor que el de la derecha.
-* **Menor que (`<`)** → Verdadero si el valor de la izquierda es menor que el de la derecha.
-* **Mayor o igual que (`>=`)** → Verdadero si el valor de la izquierda es mayor o igual que el de la derecha.
-* **Menor o igual que (`<=`)** → Verdadero si el valor de la izquierda es menor o igual que el de la derecha.
-* **Igualdad (`==`)** → Verdadero si ambos valores son iguales.
-* **Desigualdad (`!=`)** → Verdadero si ambos valores son diferentes.
+* **Mayor que (`>`)**: Verdadero si el valor de la izquierda es mayor que el de la derecha.
+* **Menor que (`<`)**: Verdadero si el valor de la izquierda es menor que el de la derecha.
+* **Mayor o igual que (`>=`)**: Verdadero si el valor de la izquierda es mayor o igual que el de la derecha.
+* **Menor o igual que (`<=`)**: Verdadero si el valor de la izquierda es menor o igual que el de la derecha.
+* **Igualdad (`==`)**: Verdadero si ambos valores son iguales.
+* **Desigualdad (`!=`)**: Verdadero si ambos valores son diferentes.
 
 ---
 
 # Operaciones lógicas
 
-* **AND lógico (`&&`)** → Verdadero si ambos operandos son verdaderos.
-* **OR lógico (`||`)** → Verdadero si al menos un operando es verdadero.
-* **NOT lógico (`!`)** → Invierte el valor lógico (true → false, false → true).
+* **AND lógico (`&&`)**: Verdadero si ambos operandos son verdaderos.
+* **OR lógico (`||`)**: Verdadero si al menos un operando es verdadero.
+* **NOT lógico (`!`)**: Invierte el valor lógico (true: false, false: true).
 
 ---
 
 # Operaciones bitwise
 
-* **AND bit a bit (`&`)** → Compara cada bit y devuelve 1 si ambos bits son 1.
-* **OR bit a bit (`|`)** → Compara cada bit y devuelve 1 si al menos un bit es 1.
-* **XOR bit a bit (`^`)** → Devuelve 1 si los bits son diferentes.
-* **NOT bit a bit (`~`)** → Invierte cada bit.
-* **Desplazamiento a la izquierda (`<<`)** → Mueve los bits a la izquierda, insertando ceros.
-* **Desplazamiento a la derecha (`>>`)** → Mueve los bits a la derecha.
+* **AND bit a bit (`&`)**: Compara cada bit y devuelve 1 si ambos bits son 1.
+* **OR bit a bit (`|`)**: Compara cada bit y devuelve 1 si al menos un bit es 1.
+* **XOR bit a bit (`^`)**: Devuelve 1 si los bits son diferentes.
+* **NOT bit a bit (`~`)**: Invierte cada bit.
+* **Desplazamiento a la izquierda (`<<`)**: Mueve los bits a la izquierda, insertando ceros.
+* **Desplazamiento a la derecha (`>>`)**: Mueve los bits a la derecha.
 
 ---
 
