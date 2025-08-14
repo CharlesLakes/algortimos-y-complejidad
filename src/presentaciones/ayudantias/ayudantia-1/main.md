@@ -302,15 +302,11 @@ Dado un número entero $n$ ($1 \le n \le 20$), que representa a $n$ personas sen
 * **Restricciones:** No usar arreglos ni recursión; solo bucles y operadores bitwise.
 
 **Ejemplo:**
-Para $n = 3$, algunas combinaciones serían:
+Para $n = 2$, algunas combinaciones serían:
 
 ```
-000
-001
-010
-011
-100
-101
-110
-111
+00
+01
+10
+11
 ```
