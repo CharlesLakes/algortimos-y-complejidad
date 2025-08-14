@@ -218,13 +218,99 @@ int main() {
 }
 ```
 
+
 ---
 
 # Ejercicio 1
 
-Dado dos numeros enteros positivos a y b (<= 1e9), calcula:
+Dados dos números enteros positivos $a$ y $b$ ($a, b \leq 10^9$), calcular:
 
 $$
-\lceil \frac{a}{b} \rceil
+\left\lceil \frac{a}{b} \right\rceil
 $$
 
+**Restricción:** No usar `if` ni comparaciones.
+
+---
+
+# Ejercicio 2
+
+Dado un número entero positivo $n$ ($n \leq 10^9$), determinar si es par.
+
+**Restricción:** No usar el operador `%`.
+
+---
+
+# Ejercicio 3
+
+Hay $n$ sillas dispuestas en un círculo, numeradas de $0$ a $n-1$ en **sentido horario**.
+Te encuentras en la silla $x$ y debes moverte $b$ posiciones:
+
+* Si $b > 0$, avanzas $b$ sillas en sentido **horario**.
+* Si $b < 0$, retrocedes $|b|$ sillas en sentido **antihorario**.
+
+Determina en qué silla quedarás después del movimiento.
+
+---
+
+# Ejercicio 4
+
+Dado un número entero $n$ ($1 \le n \le 10^9$), **cuenta cuántos bits están encendidos (1)** en su representación binaria.
+
+**Restricción:** Usa solo operadores bitwise y bucles; no usar `%` ni comparaciones directas.
+
+---
+
+# Ejercicio 5
+
+Dado un número entero $n$ ($1 \le n \le 10^5$), imprime los números de $0$ a $n-1$ **alternando par/impar**, sin usar `%` ni comparaciones directas.
+
+**Restricción:** Usa operadores bitwise y estructuras de control.
+
+---
+
+# Ejercicio 6
+
+Dado un número entero $x$ ($-10^9 \le x \le 10^9$), escribe una función `signo(int x)` que devuelva:
+
+* 1 si $x > 0$
+* 0 si $x = 0$
+* -1 si $x < 0$
+
+**Restricción:** No usar `if`, comparaciones ni ternarios; solo operadores aritméticos y bitwise.
+
+---
+
+# Ejercicio 7
+
+Dado un número entero $n$ ($1 \le n \le 10^5$), calcula la **suma de los números del 1 al n** alternando el signo:
+
+$$
+1 - 2 + 3 - 4 + 5 - 6 + \dots
+$$
+
+**Restricción:** Solo bucles y operadores aritméticos.
+
+---
+
+# Ejercicio 8
+
+Dado un número entero $n$ ($1 \le n \le 20$), que representa a $n$ personas sentadas en sillas:
+
+* Cada persona puede estar **sentada (0)** o **de pie (1)**.
+* Escribe un programa que imprima **todas las posibles combinaciones** usando enteros y operadores bitwise.
+* **Restricciones:** No usar arreglos ni recursión; solo bucles y operadores bitwise.
+
+**Ejemplo:**
+Para $n = 3$, algunas combinaciones serían:
+
+```
+000
+001
+010
+011
+100
+101
+110
+111
+```
