@@ -218,12 +218,31 @@ int main() {
 }
 ```
 
+---
+
+# Arreglos nativos en C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numeros[5] = {1, 2, 3, 4, 5}; // Definición e inicialización
+
+    numeros[0] = 10; // Asignación de valor al primer elemento
+    numeros[1] = 20; // Asignación de valor al segundo elemento
+
+    cout << numeros[2] << endl; // Acceso al tercer elemento (3)
+
+    return 0;
+}
+```
 
 ---
 
 # Ejercicio 1
 
-Dados dos números enteros positivos $a$ y $b$ ($a, b \leq 10^9$), calcular:
+Dados dos números enteros positivos $a$ y $b$ ($1 \leq a, b \leq 10^{12}$), calcular:
 
 $$
 \left\lceil \frac{a}{b} \right\rceil
@@ -248,6 +267,12 @@ Te encuentras en la silla $x$ y debes moverte $b$ posiciones:
 
 * Si $b > 0$, avanzas $b$ sillas en sentido **horario**.
 * Si $b < 0$, retrocedes $|b|$ sillas en sentido **antihorario**.
+
+**Límites:**
+
+$$
+1 \le n \le 10^9, \quad 0 \le x \le n-1, \quad -10^12 \le b \le 10^12
+$$
 
 Determina en qué silla quedarás después del movimiento.
 
@@ -310,3 +335,10 @@ Para $n = 2$, algunas combinaciones serían:
 10
 11
 ```
+
+---
+
+# Desafío
+
+Dado un número entero $N$ ($0 \le N \le 10^{12}$), determinar **cuántos ceros consecutivos** hay al final de $N!$.
+
