@@ -86,6 +86,17 @@ Se llama salida estándar porque no depende de un archivo y, externamente, esta 
 
 ---
 
+# Operadores de comparación
+
+* **Mayor que (`>`)** → Verdadero si el valor de la izquierda es mayor que el de la derecha.
+* **Menor que (`<`)** → Verdadero si el valor de la izquierda es menor que el de la derecha.
+* **Mayor o igual que (`>=`)** → Verdadero si el valor de la izquierda es mayor o igual que el de la derecha.
+* **Menor o igual que (`<=`)** → Verdadero si el valor de la izquierda es menor o igual que el de la derecha.
+* **Igualdad (`==`)** → Verdadero si ambos valores son iguales.
+* **Desigualdad (`!=`)** → Verdadero si ambos valores son diferentes.
+
+---
+
 # Operaciones lógicas
 
 * **AND lógico (`&&`)** → Verdadero si ambos operandos son verdaderos.
@@ -102,3 +113,118 @@ Se llama salida estándar porque no depende de un archivo y, externamente, esta 
 * **NOT bit a bit (`~`)** → Invierte cada bit.
 * **Desplazamiento a la izquierda (`<<`)** → Mueve los bits a la izquierda, insertando ceros.
 * **Desplazamiento a la derecha (`>>`)** → Mueve los bits a la derecha.
+
+---
+
+# Sintaxis básica
+
+* Comentarios:  
+  `// una línea`  
+  `/* varias líneas */`
+
+* Declaración:  
+  `int edad;`  
+
+* Inicialización:  
+  `int edad = 20;`
+
+---
+
+# Bloque de código
+
+```cpp
+{
+    int x = 5;
+    cout << x << endl;
+}
+````
+
+---
+
+# if - else
+
+```cpp
+int edad = 18;
+if (edad >= 18) {
+    cout << "Mayor" << endl;
+} else {
+    cout << "Menor" << endl;
+}
+```
+
+---
+
+# while
+
+```cpp
+int i = 0;
+while (i < 5) {
+    cout << i << " ";
+    i++;
+}
+```
+
+---
+
+# do-while
+
+```cpp
+int i = 0;
+do {
+    cout << i << " ";
+    i++;
+} while (i < 5);
+```
+
+---
+
+# for
+
+```cpp
+for (int i = 0; i < 5; i++) {
+    cout << i << " ";
+}
+```
+
+---
+
+# break y continue
+
+```cpp
+for (int i = 0; i < 5; i++) {
+    if (i == 3) break;
+    cout << i << " ";
+}
+```
+
+```cpp
+for (int i = 0; i < 5; i++) {
+    if (i == 2) continue;
+    cout << i << " ";
+}
+```
+
+---
+
+# Funciones
+
+```cpp
+int sumar(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    cout << sumar(3, 4);
+}
+```
+
+---
+
+# Ejercicio 1
+
+Dado dos numeros enteros positivos a y b (<= 1e9), calcula:
+
+$$
+\lceil \frac{a}{b} \rceil
+$$
+
