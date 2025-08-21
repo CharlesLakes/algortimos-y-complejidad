@@ -28,7 +28,7 @@ Carlos Lagos - [carlos.lagosc@usm.cl](mailto:carlos.lagosc@usm.cl)
   * Implementar estructuras de datos más complejas (listas enlazadas, árboles binarios, etc.).
 
 * **¿Pero si la STL nos brinda estructuras de datos, podemos evitarlos?**
-  * Sí.
+  * Sí, casi siempre.
 
 
 </div>
