@@ -126,7 +126,7 @@ section.title>h1 {
   background-color: var(--main);
   border-radius: 25px;
   text-align: center;
-  top: 25%;
+  top: 45%;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -140,7 +140,8 @@ section.title>h1 {
 section.title>p {
   position: relative;
   text-align: center;
-  top: 35px;
+  top: 70px;
+  
 }
 
 /* || SECTION CLASS: tinytext */
