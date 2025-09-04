@@ -160,6 +160,8 @@ for(int x : v) cout << x << " ";
 cout << endl;
 ```
 
+---
+
 # Sobrecarga de operadores fuera de la clase/struct
 
 ```cpp
@@ -281,4 +283,26 @@ y se deben procesar $q$ operaciones de dos tipos:
 
 1. **Insertar** una fracción $\frac{a}{b}$ en el conjunto e imprimir la fracción máxima.  
 2. **Eliminar** la fracción máxima actual del conjunto e imprimir el nuevo máximo (o indicar que el conjunto está vacío).  
+
+---
+
+# Ejercicio 5 (Reto): Elemento mayoritario en un rango
+
+<style scoped>
+    ul,p{
+        font-size:27px;
+    }
+</style>
+
+
+Se te da un arreglo de enteros $A[1..N]$ y debes responder $Q$ consultas. Cada consulta consiste en dos enteros $L$ y $R$ ($1 \le L \le R \le N$). Debes determinar **el elemento que aparece más de la mitad de veces** en el subarreglo $A[L..R]$, si existe.
+
+- **Entrada:** $1 \le N \le 10^5$, $1 \le Q \le 10^5$, $1 \le A[i] \le 10^9$ y $1 \le L \le R \le N$
+
+- **Salida:** Para cada consulta, imprime el elemento mayoritario o indica que no existe.
+
+- **Complejidad esperada:** $O((N + Q) \log N)$
+
+- **Nota:** Puedes usar algoritmos aleatorizados/probabilísticos, que **casi nunca fallan**. Su probabilidad de error es tan baja que, en la práctica, sería **más probable que la ejecución falle por un evento físico extraordinario** que por el algoritmo mismo.
+
 
