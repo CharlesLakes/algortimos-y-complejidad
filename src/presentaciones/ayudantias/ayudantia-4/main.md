@@ -51,6 +51,78 @@ getline(cin >> ws, s); // ignora espacios y saltos antes de leer
 
 ---
 
+
+# Formateo de salida: `setprecision` y `fixed`
+
+- **`setprecision(n)`**  
+  - Controla **n dígitos significativos** (incluye parte entera y decimal).  
+  - Puede mostrar números en **notación científica**.
+
+- **`fixed + setprecision(n)`**  
+  - Controla **n dígitos después del punto decimal**.  
+  - Siempre en **notación decimal normal**.
+
+---
+
+# Ejemplos
+
+```cpp
+double x = 12345.6789;
+double y = 0.001234567;
+
+// Solo setprecision
+cout << setprecision(4) << x << endl; // 1.235e+04
+cout << setprecision(4) << y << endl; // 0.001235
+
+// fixed + setprecision
+cout << fixed << setprecision(4) << x << endl; // 12345.6789
+cout << fixed << setprecision(4) << y << endl; // 0.0012
+````
+
+---
+
+# Máximo común divisor y mínimo común múltiplo
+
+* **`__gcd(a, b)`**: calcula el máximo común divisor de `a` y `b`.
+* **LCM (mínimo común múltiplo)**:
+
+$$
+\text{lcm}(a, b) = \frac{a \cdot b}{\text{gcd}(a, b)}
+$$
+
+---
+
+# Ejemplo
+
+```cpp
+int a = 12, b = 18;
+int g = __gcd(a, b);
+int l = a / g * b;
+cout << "GCD: " << g << ", LCM: " << l << endl;
+```
+
+Salida:
+
+```
+GCD: 6, LCM: 36
+```
+
+---
+
+# Funciones trigonométricas
+
+En C++ las funciones trigonométricas estándar se encuentran en `<cmath>` y usan **radianes**.  
+
+- `sin(x)` → seno  
+- `cos(x)` → coseno  
+- `tan(x)` → tangente  
+- `asin(x)` → arco seno  
+- `acos(x)` → arco coseno  
+- `atan(x)` → arco tangente  
+- `atan2(y, x)` → ángulo del punto `(x, y)`
+
+---
+
 # Sobrecarga de operadores fuera de la clase/struct
 
 ```cpp
