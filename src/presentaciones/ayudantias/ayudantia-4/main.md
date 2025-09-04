@@ -123,6 +123,43 @@ En C++ las funciones trigonométricas estándar se encuentran en `<cmath>` y usa
 
 ---
 
+# Generación de números aleatorios
+
+```cpp
+// 1. rand() clásico
+srand(time(0));
+cout << "rand() % 100: " << rand() % 100 << endl;
+
+// 2. mt19937 + uniform_int_distribution
+mt19937 rng_mt(time(0));
+uniform_int_distribution<int> dist_int(0, 99);
+cout << "mt19937: " << dist_int(rng_mt) << endl;
+
+// 3. default_random_engine + uniform_int_distribution
+default_random_engine eng(time(0));
+uniform_int_distribution<int> dist_eng(1, 10);
+cout << "default_random_engine: " << dist_eng(eng) << endl;
+```
+
+---
+
+# Generación de números aleatorios
+
+```cpp
+// 4. random_device + mt19937
+random_device rd;
+mt19937 rng_rd(rd());
+uniform_int_distribution<int> dist_rd(1, 100);
+cout << "random_device + mt19937: " << dist_rd(rng_rd) << endl;
+
+// 5. shuffle de un vector
+vector<int> v = {1,2,3,4,5};
+shuffle(v.begin(), v.end(), rng_mt);
+cout << "shuffle: ";
+for(int x : v) cout << x << " ";
+cout << endl;
+```
+
 # Sobrecarga de operadores fuera de la clase/struct
 
 ```cpp
